@@ -1297,3 +1297,4 @@ void resize(
         height
     );
 }
+// FINAL
