@@ -477,54 +477,322 @@ int main()
             0.00f, -0.94f, 0.0f, 0.0f, 0.0f, 0.0f,
 
             // =================================================
-            // BIGOTES IZQUIERDOS
+            // BIGOTES IZQUIERDOS - MISMO TAMAÑO, MÁS ADENTRO
             // =================================================
 
             // Bigote izquierdo 1 - corto
-                -0.38f, -0.54f, 0.0f, 0.0f, 0.0f, 0.0f,   // 150
-                -0.66f, -0.50f, 0.0f, 0.0f, 0.0f, 0.0f,   // 151
+                          -0.32f, -0.54f, 0.0f, 0.0f, 0.0f, 0.0f,   // 150
+                          -0.60f, -0.50f, 0.0f, 0.0f, 0.0f, 0.0f,   // 151
 
-                // Bigote izquierdo 2 - más largo
-                -0.38f, -0.59f, 0.0f, 0.0f, 0.0f, 0.0f,   // 152
-                -0.82f, -0.57f, 0.0f, 0.0f, 0.0f, 0.0f,   // 153
+                          // Bigote izquierdo 2
+                          -0.32f, -0.59f, 0.0f, 0.0f, 0.0f, 0.0f,   // 152
+                          -0.76f, -0.57f, 0.0f, 0.0f, 0.0f, 0.0f,   // 153
 
-                // Bigote izquierdo 3 - más largo
-                -0.38f, -0.64f, 0.0f, 0.0f, 0.0f, 0.0f,   // 154
-                -0.84f, -0.65f, 0.0f, 0.0f, 0.0f, 0.0f,   // 155
+                          // Bigote izquierdo 3
+                          -0.32f, -0.64f, 0.0f, 0.0f, 0.0f, 0.0f,   // 154
+                          -0.78f, -0.65f, 0.0f, 0.0f, 0.0f, 0.0f,   // 155
 
-                // Bigote izquierdo 4 - más largo
-                -0.38f, -0.69f, 0.0f, 0.0f, 0.0f, 0.0f,   // 156
-                -0.82f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 157
+                          // Bigote izquierdo 4
+                          -0.32f, -0.69f, 0.0f, 0.0f, 0.0f, 0.0f,   // 156
+                          -0.76f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 157
 
-                // Bigote izquierdo 5 - inferior, largo
-                -0.38f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 158
-                -0.78f, -0.84f, 0.0f, 0.0f, 0.0f, 0.0f,   // 159
+                          // Bigote izquierdo 5
+                          -0.32f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 158
+                          -0.72f, -0.84f, 0.0f, 0.0f, 0.0f, 0.0f,   // 159
 
+
+                          // =================================================
+                          // BIGOTES DERECHOS - MISMO TAMAÑO, MÁS ADENTRO
+                          // =================================================
+
+                          // Bigote derecho 1 - corto
+                          0.32f, -0.54f, 0.0f, 0.0f, 0.0f, 0.0f,   // 160
+                          0.60f, -0.50f, 0.0f, 0.0f, 0.0f, 0.0f,   // 161
+
+                          // Bigote derecho 2
+                          0.32f, -0.59f, 0.0f, 0.0f, 0.0f, 0.0f,   // 162
+                          0.76f, -0.57f, 0.0f, 0.0f, 0.0f, 0.0f,   // 163
+
+                          // Bigote derecho 3
+                          0.32f, -0.64f, 0.0f, 0.0f, 0.0f, 0.0f,   // 164
+                          0.78f, -0.65f, 0.0f, 0.0f, 0.0f, 0.0f,   // 165
+
+                          // Bigote derecho 4
+                          0.32f, -0.69f, 0.0f, 0.0f, 0.0f, 0.0f,   // 166
+                          0.76f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 167
+
+                          // Bigote derecho 5
+                          0.32f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 168
+                          0.72f, -0.84f, 0.0f, 0.0f, 0.0f, 0.0f,    // 169
 
                 // =================================================
-                // BIGOTES DERECHOS
+                // RELLENO DE LOS TRIANGULOS DEL MENTON
                 // =================================================
 
-                // Bigote derecho 1 - corto
-                0.38f, -0.54f, 0.0f, 0.0f, 0.0f, 0.0f,   // 160
-                0.66f, -0.50f, 0.0f, 0.0f, 0.0f, 0.0f,   // 161
+                // Triángulo izquierdo - ROJO
 
-                // Bigote derecho 2 - más largo
-                0.38f, -0.59f, 0.0f, 0.0f, 0.0f, 0.0f,   // 162
-                0.82f, -0.57f, 0.0f, 0.0f, 0.0f, 0.0f,   // 163
+                // 170
+                -0.29f, -0.98f, 0.0f, 1.0f, 0.08f, 0.12f,
 
-                // Bigote derecho 3 - más largo
-                0.38f, -0.64f, 0.0f, 0.0f, 0.0f, 0.0f,   // 164
-                0.84f, -0.65f, 0.0f, 0.0f, 0.0f, 0.0f,   // 165
+                // 171
+                -0.10f, -0.78f, 0.0f, 1.0f, 0.08f, 0.12f,
 
-                // Bigote derecho 4 - más largo
-                0.38f, -0.69f, 0.0f, 0.0f, 0.0f, 0.0f,   // 166
-                0.82f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 167
+                // 172
+                0.00f, -0.94f, 0.0f, 1.0f, 0.08f, 0.12f,
 
-                // Bigote derecho 5 - inferior, largo
-                0.38f, -0.74f, 0.0f, 0.0f, 0.0f, 0.0f,   // 168
-                0.78f, -0.84f, 0.0f, 0.0f, 0.0f, 0.0f    // 169
 
+                // Triángulo derecho - NARANJA
+
+                // 173
+                0.10f, -0.78f, 0.0f, 1.0f, 0.45f, 0.08f,
+
+                // 174
+                0.29f, -0.98f, 0.0f, 1.0f, 0.45f, 0.08f,
+
+                // 175
+                0.00f, -0.94f, 0.0f, 1.0f, 0.45f, 0.08f,
+
+                // =================================================
+                // CONTORNO NEGRO COMPLETO DE LA BOCA
+                // =================================================
+
+                // Triángulo blanco superior
+                -0.10f, -0.45f, 0.0f, 0.0f, 0.0f, 0.0f,   // 176
+                0.10f, -0.45f, 0.0f, 0.0f, 0.0f, 0.0f,   // 177
+                0.00f, -0.62f, 0.0f, 0.0f, 0.0f, 0.0f,   // 178
+
+                // Triángulo azul izquierdo
+                -0.10f, -0.45f, 0.0f, 0.0f, 0.0f, 0.0f,   // 179
+                0.00f, -0.62f, 0.0f, 0.0f, 0.0f, 0.0f,   // 180
+                -0.10f, -0.78f, 0.0f, 0.0f, 0.0f, 0.0f,   // 181
+
+                // Triángulo azul derecho
+                0.10f, -0.45f, 0.0f, 0.0f, 0.0f, 0.0f,   // 182
+                0.10f, -0.78f, 0.0f, 0.0f, 0.0f, 0.0f,   // 183
+                0.00f, -0.62f, 0.0f, 0.0f, 0.0f, 0.0f,   // 184
+
+                // Rombo rojo de la lengua
+                0.00f, -0.62f, 0.0f, 0.0f, 0.0f, 0.0f,   // 185
+                -0.10f, -0.78f, 0.0f, 0.0f, 0.0f, 0.0f,   // 186
+                0.00f, -0.94f, 0.0f, 0.0f, 0.0f, 0.0f,   // 187
+                0.10f, -0.78f, 0.0f, 0.0f, 0.0f, 0.0f,    // 188
+
+                    // =================================================
+                    // LINEAS DE LAS OREJAS
+                    // MISMO TAMAÑO - UN POCO MAS ADENTRO
+                    // =================================================
+
+                    // ---------- OREJA IZQUIERDA ----------
+
+                    // Línea 1
+                    -0.56f, 0.66f, 0.0f, 0.0f, 0.0f, 0.0f,   // 189
+                    -0.51f, 0.66f, 0.0f, 0.0f, 0.0f, 0.0f,   // 190
+
+                    // Línea 2
+                    -0.54f, 0.55f, 0.0f, 0.0f, 0.0f, 0.0f,   // 191
+                    -0.45f, 0.55f, 0.0f, 0.0f, 0.0f, 0.0f,   // 192
+
+                    // Línea 3
+                    -0.52f, 0.44f, 0.0f, 0.0f, 0.0f, 0.0f,   // 193
+                    -0.40f, 0.44f, 0.0f, 0.0f, 0.0f, 0.0f,   // 194
+
+                    // Línea 4
+                    -0.50f, 0.34f, 0.0f, 0.0f, 0.0f, 0.0f,   // 195
+                    -0.35f, 0.34f, 0.0f, 0.0f, 0.0f, 0.0f,   // 196
+
+
+                    // ---------- OREJA DERECHA ----------
+
+                    // Línea 1
+                    0.51f, 0.66f, 0.0f, 0.0f, 0.0f, 0.0f,   // 197
+                    0.56f, 0.66f, 0.0f, 0.0f, 0.0f, 0.0f,   // 198
+
+                    // Línea 2
+                    0.45f, 0.55f, 0.0f, 0.0f, 0.0f, 0.0f,   // 199
+                    0.54f, 0.55f, 0.0f, 0.0f, 0.0f, 0.0f,   // 200
+
+                    // Línea 3
+                    0.40f, 0.44f, 0.0f, 0.0f, 0.0f, 0.0f,   // 201
+                    0.52f, 0.44f, 0.0f, 0.0f, 0.0f, 0.0f,   // 202
+
+                    // Línea 4
+                    0.35f, 0.34f, 0.0f, 0.0f, 0.0f, 0.0f,   // 203
+                    0.50f, 0.34f, 0.0f, 0.0f, 0.0f, 0.0f,    // 204
+
+                    // =================================================
+                    // ROMBOS AZULES DEL CUERPO
+                    // Cada rombo: centro, arriba, derecha, abajo,
+                    // izquierda, arriba otra vez para cerrar el FAN
+                    // =================================================
+
+
+                    // =================================================
+                    // LADO IZQUIERDO - CUERPO AMARILLO
+                    // =================================================
+
+                    // ---------- ROMBO 1 ----------
+
+                    // 205 centro
+                    -0.28f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 206 arriba
+                    -0.28f, -1.15f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 207 derecha
+                    -0.24f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 208 abajo
+                    -0.28f, -1.05f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 209 izquierda
+                    -0.32f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 210 repetir arriba
+                    -0.28f, -1.15f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 2 ----------
+
+                    // 211 centro
+                    -0.13f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 212 arriba
+                    -0.13f, -1.22f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 213 derecha
+                    -0.09f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 214 abajo
+                    -0.13f, -1.12f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 215 izquierda
+                    -0.17f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 216 repetir arriba
+                    -0.13f, -1.22f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 3 ----------
+
+                    // 217 centro
+                    -0.30f, -1.27f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 218 arriba
+                    -0.30f, -1.32f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 219 derecha
+                    -0.26f, -1.27f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 220 abajo
+                    -0.30f, -1.22f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 221 izquierda
+                    -0.34f, -1.27f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 222 repetir arriba
+                    -0.30f, -1.32f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 4 ----------
+
+                    // 223 centro
+                    -0.15f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 224 arriba
+                    -0.15f, -1.38f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 225 derecha
+                    -0.11f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 226 abajo
+                    -0.15f, -1.28f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 227 izquierda
+                    -0.19f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 228 repetir arriba
+                    -0.15f, -1.38f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 5 ----------
+
+                    // 229 centro
+                    -0.25f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 230 arriba
+                    -0.25f, -1.44f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 231 derecha
+                    -0.21f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 232 abajo
+                    -0.25f, -1.36f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 233 izquierda
+                    -0.29f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 234 repetir arriba
+                    -0.25f, -1.44f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+
+                    // =================================================
+                    // LADO DERECHO - CUERPO VERDE
+                    // =================================================
+
+                    // ---------- ROMBO 6 ----------
+
+                    // 235 centro
+                    0.10f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 236 arriba
+                    0.10f, -1.15f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 237 derecha
+                    0.14f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 238 abajo
+                    0.10f, -1.05f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 239 izquierda
+                    0.06f, -1.10f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 240 repetir arriba
+                    0.10f, -1.15f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 7 ----------
+
+                    // 241 centro
+                    0.23f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 242 arriba
+                    0.23f, -1.22f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 243 derecha
+                    0.27f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 244 abajo
+                    0.23f, -1.12f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 245 izquierda
+                    0.19f, -1.17f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 246 repetir arriba
+                    0.23f, -1.22f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 8 ----------
+
+                    // 247 centro
+                    0.11f, -1.28f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 248 arriba
+                    0.11f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 249 derecha
+                    0.15f, -1.28f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 250 abajo
+                    0.11f, -1.23f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 251 izquierda
+                    0.07f, -1.28f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 252 repetir arriba
+                    0.11f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 9 ----------
+
+                    // 253 centro
+                    0.24f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 254 arriba
+                    0.24f, -1.38f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 255 derecha
+                    0.28f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 256 abajo
+                    0.24f, -1.28f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 257 izquierda
+                    0.20f, -1.33f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 258 repetir arriba
+                    0.24f, -1.38f, 0.0f, 0.05f, 0.20f, 0.75f,
+
+
+                    // ---------- ROMBO 10 ----------
+
+                    // 259 centro
+                    0.15f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 260 arriba
+                    0.15f, -1.44f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 261 derecha
+                    0.19f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 262 abajo
+                    0.15f, -1.36f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 263 izquierda
+                    0.11f, -1.40f, 0.0f, 0.05f, 0.20f, 0.75f,
+                    // 264 repetir arriba
+                    0.15f, -1.44f, 0.0f, 0.05f, 0.20f, 0.75f
 
     };
 
@@ -663,12 +931,7 @@ int main()
 
 
         // Fondo azul marino
-        glClearColor(
-            0.06f,
-            0.12f,
-            0.32f,
-            1.0f
-        );
+        glClearColor(0.15f, 0.25f, 0.50f, 1.0f);
 
 
         glClear(GL_COLOR_BUFFER_BIT);
@@ -796,7 +1059,7 @@ int main()
         // CONTORNO NEGRO DE LOS OJOS
         // =================================================
 
-        glLineWidth(7.0f);
+        glLineWidth(10.0f);
 
 
         // OJO IZQUIERDO
@@ -889,6 +1152,31 @@ int main()
         );
 
         // =================================================
+        // TRIANGULOS DEL MENTON
+        // =================================================
+
+        glDrawArrays(GL_TRIANGLES, 170, 3); // izquierdo rojo
+        glDrawArrays(GL_TRIANGLES, 173, 3); // derecho naranja
+
+        // =================================================
+        // ROMBOS AZULES DEL CUERPO
+        // =================================================
+
+        // Lado amarillo
+        glDrawArrays(GL_TRIANGLE_FAN, 205, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 211, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 217, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 223, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 229, 6);
+
+        // Lado verde
+        glDrawArrays(GL_TRIANGLE_FAN, 235, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 241, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 247, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 253, 6);
+        glDrawArrays(GL_TRIANGLE_FAN, 259, 6);
+
+        // =================================================
         // CONTORNO NEGRO DE LAS OREJAS
         // =================================================
 
@@ -935,7 +1223,7 @@ int main()
         // BIGOTES NEGROS
         // =================================================
 
-        glLineWidth(7.0f);
+        glLineWidth(9.0f);
 
         // 5 bigotes izquierdos
         glDrawArrays(
@@ -950,6 +1238,35 @@ int main()
             160,
             10
         );
+
+        // =================================================
+        // CONTORNO NEGRO DE LA BOCA
+        // =================================================
+
+        glLineWidth(7.0f);
+
+        // Triángulo blanco
+        glDrawArrays(GL_LINE_LOOP, 176, 3);
+
+        // Área azul izquierda
+        glDrawArrays(GL_LINE_LOOP, 179, 3);
+
+        // Área azul derecha
+        glDrawArrays(GL_LINE_LOOP, 182, 3);
+
+        // Rombo rojo de la lengua
+        glDrawArrays(GL_LINE_LOOP, 185, 4);
+        // =================================================
+        // LINEAS INTERNAS DE LAS OREJAS
+        // =================================================
+
+        glLineWidth(7.0f);
+
+        // 4 líneas de la oreja izquierda
+        glDrawArrays(GL_LINES, 189, 8);
+
+        // 4 líneas de la oreja derecha
+        glDrawArrays(GL_LINES, 197, 8);
 
         glBindVertexArray(0);
 
