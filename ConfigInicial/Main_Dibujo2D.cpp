@@ -1,7 +1,7 @@
 //Práctica 2
 //González Jiménez Victor Yotecatl
 //Fecha de entrega: agosto 2026
-//Número de cuenta
+//Número de cuenta 313173743
 
 #include<iostream>
 
