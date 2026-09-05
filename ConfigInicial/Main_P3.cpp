@@ -1,6 +1,6 @@
-//Previo 3
+//Práctica 3
 //González Jiménez Victor Yotecatl
-//Fecha de entrega: 01 - 09 - 2026
+//Fecha de entrega: 04 - 09 - 2026
 //Número de cuenta: 313173743 
 
 #include<iostream>
@@ -227,9 +227,9 @@ int main() {
 	
 	    view = glm::translate(view, glm::vec3(0.0f,0.0f,-13.0f));
 		// Posición del primer cubo
-		model = glm::translate(model, glm::vec3(2.0f, -2.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(2.2f, -2.5f, 0.0f));
 		model = glm::rotate( model, 0.5f, glm::vec3( 0.0f, 1.0f, 0.0f ) ); // use to compare orthographic and perspective projection
-		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.3f, 2.3f, 2.3f));
 		//view = glm::translate( view, glm::vec3( screenWidth / 2, screenHeight / 5,-900.0f ) ); // use with orthographic projection
 		
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
@@ -244,19 +244,98 @@ int main() {
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36); //primer cubo ---------------------------------------------------------------------------------
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-2.2f, -2.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(-2.4f, -2.5f, 0.0f));
 		model = glm::rotate(model, 0.5f, glm::vec3(0.0f, -1.0f, 0.0f)); // use to compare orthographic and perspective projection
-		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.3f, 2.3f, 2.3f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);//--------------segundo cubo -----------------------------
 		model = glm::mat4(1);
 		// Lo mandamos al lado contrario
 		model = glm::translate(model, glm::vec3(-0.3f, -0.5f, 0.0f));
 		// Rotación contraria para crear el efecto espejo
-		model = glm::rotate(model, -45.0f, glm::vec3(1.6f, -1.0f, -0.2f));		// Misma escala que el cubo grande
+		model = glm::rotate(model, -45.0f, glm::vec3(1.9f, -1.0f, -0.2f));		// Misma escala que el cubo grande
 		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36); //----------------------tercer cubo-----------------------
+
+		model = glm::mat4(1);
+		// Lo mandamos al lado contrario
+		model = glm::translate(model, glm::vec3(0.8f, 1.3f, 0.0f));
+		// Rotación contraria para crear el efecto espejo
+		model = glm::rotate(model, 90.0f, glm::vec3(0.0f, 0.9f, 0.2f));		// Misma escala que el cubo grande
+		model = glm::rotate(model, 90.0f, glm::vec3(0.0f, 0.9f, 0.2f));
+		model = glm::rotate(model, 90.0f, glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.7f, 1.7f, 1.7f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36); //----------------------cuarto cubo-----------------------
+
+		//---------------------- QUINTO CUBO -----------------------
+
+		model = glm::mat4(1);
+
+		// Valores para controlar la posición
+		float x = -1.9f;   // Izquierda (-) / Derecha (+)
+		float y = 1.8f;   // Abajo (-) / Arriba (+)
+		float z = 0.0f;   // Profundidad
+
+		// Valores para controlar la rotación
+		float rx = -0.4f;   // Rotación sobre X
+		float ry = 3.2f;   // Rotación sobre Y
+		float rz = 0.4f;   // Rotación sobre Z
+
+		// Posición del cubo
+		model = glm::translate(model, glm::vec3(x, y, z));
+
+		// Rotación independiente en cada eje
+		model = glm::rotate(model, rx, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, ry, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, rz, glm::vec3(0.0f, 0.0f, 1.0f));
+
+		// Tamaño del cubo
+		model = glm::scale(model, glm::vec3(1.7f, 1.7f, 1.7f));
+
+		// Enviamos la matriz del quinto cubo al shader
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		// Dibujamos el quinto cubo
+		glDrawArrays(GL_TRIANGLES, 0, 36);//---------------------
+
+		//-------------------------sexto cubo----------
+				
+
+		model = glm::mat4(1);
+
+		// Valores para controlar la posición
+
+		//float x6 = 0.5f;   // Izquierda (-) / Derecha (+)
+		//float y6 = 5.3f;   // Abajo (-) / Arriba (+)
+		//float z6 = 0.0f;   // Profundidad
+		float x6 = -0.4f;   // Izquierda (-) / Derecha (+)
+		float y6 = 3.0f;   // Abajo (-) / Arriba (+)
+		float z6 = 2.0f;   // Profundidad
+
+		// Valores para controlar la rotación
+		float rx6 = 1.1f;   // Rotación sobre X
+		float ry6 = -0.1f;   // Rotación sobre Y
+		float rz6 = -0.3f;   // Rotación sobre Z
+
+		// Posición del cubo
+		model = glm::translate(model, glm::vec3(x6, y6, z6));
+
+		// Rotación independiente en cada eje
+		model = glm::rotate(model, rx6, glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, ry6, glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, rz6, glm::vec3(0.0f, 0.0f, 1.0f));
+
+		// Tamaño del cubo
+		model = glm::scale(model, glm::vec3(1.3f, 1.3f, 1.3f));
+
+		// Enviamos la matriz del quinto cubo al shader
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		// Dibujamos el sexto cubo
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
 		glBindVertexArray(0);
 
 
