@@ -22,6 +22,14 @@
 #include "Shader.h"
 
 void Inputs(GLFWwindow *window);
+void dibujarCubo(
+	GLint modelLoc,
+	GLuint VAO,
+	GLuint VAOlineas,
+	GLint colorLineaLoc,
+	float x, float y, float z,
+	float sx, float sy, float sz
+);
 
 
 const GLint WIDTH = 800, HEIGHT = 600;
@@ -40,7 +48,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Modelado geometrico", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Victor Yotecatl", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
@@ -81,60 +89,111 @@ int main() {
 	// Build and compile our shader program
 	Shader ourShader("Shader/core.vs", "Shader/core.frag");
 
-
+	//VB0
 	// Set up vertex data (and buffer(s)) and attribute pointers
 
 	
 
 	// use with Perspective Projection
 	float vertices[] = {
-		-0.5f, -0.5f, 0.5f, 1.0f, 0.0f,0.0f,//Front
-		0.5f, -0.5f, 0.5f,  1.0f, 0.0f,0.0f,
-		0.5f,  0.5f, 0.5f,  1.0f, 0.0f,0.0f,
-		0.5f,  0.5f, 0.5f,  1.0f, 0.0f,0.0f,
-		-0.5f,  0.5f, 0.5f, 1.0f, 0.0f,0.0f,
-		-0.5f, -0.5f, 0.5f, 1.0f, 0.0f,0.0f,
-		
-	    -0.5f, -0.5f,-0.5f, 0.0f, 1.0f,0.0f,//Back
-		 0.5f, -0.5f,-0.5f, 0.0f, 1.0f,0.0f,
-		 0.5f,  0.5f,-0.5f, 0.0f, 1.0f,0.0f,
-		 0.5f,  0.5f,-0.5f, 0.0f, 1.0f,0.0f,
-	    -0.5f,  0.5f,-0.5f, 0.0f, 1.0f,0.0f,
-	    -0.5f, -0.5f,-0.5f, 0.0f, 1.0f,0.0f,
-		
-		 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,1.0f,
-		 0.5f, -0.5f, -0.5f,  0.0f, 0.0f,1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 0.0f,1.0f,
-		 0.5f,  0.5f, -0.5f,  0.0f, 0.0f,1.0f,
-		 0.5f,  0.5f,  0.5f,  0.0f, 0.0f,1.0f,
-		 0.5f,  -0.5f, 0.5f, 0.0f, 0.0f,1.0f,
-      
-		-0.5f,  0.5f,  0.5f,  1.0f, 1.0f,0.0f,
-		-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,0.0f,
-		-0.5f, -0.5f, -0.5f,  1.0f, 1.0f,0.0f,
-		-0.5f, -0.5f, -0.5f,  1.0f, 1.0f,0.0f,
-		-0.5f, -0.5f,  0.5f,  1.0f, 1.0f,0.0f,
-		-0.5f,  0.5f,  0.5f,  1.0f, 1.0f,0.0f,
-		
-		-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,1.0f,
-		0.5f, -0.5f, -0.5f,  0.0f, 1.0f,1.0f,
-		0.5f, -0.5f,  0.5f,  0.0f, 1.0f,1.0f,
-		0.5f, -0.5f,  0.5f,  0.0f, 1.0f,1.0f,
-		-0.5f, -0.5f,  0.5f, 0.0f, 1.0f,1.0f,
-		-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,1.0f,
-		
-		-0.5f,  0.5f, -0.5f, 1.0f, 0.2f,0.5f,
-		0.5f,  0.5f, -0.5f,  1.0f, 0.2f,0.5f,
-		0.5f,  0.5f,  0.5f,  1.0f, 0.2f,0.5f,
-		0.5f,  0.5f,  0.5f,  1.0f, 0.2f,0.5f,
-		-0.5f,  0.5f,  0.5f, 1.0f, 0.2f,0.5f,
-		-0.5f,  0.5f, -0.5f, 1.0f, 0.2f,0.5f,
+
+		// Frente
+		-0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		-0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		-0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+
+		// Atrás
+		-0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		-0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		-0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+
+		// Derecha
+		 0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+
+		 // Izquierda
+		 -0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+
+		 // Abajo
+		 -0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f, -0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f, -0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+
+		 // Arriba
+		 -0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		  0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f,  0.5f,  0.5f,   0.20f, 0.75f, 0.20f,
+		 -0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f
+	};
+
+	float verticesLineas[] = {
+
+		// Frente
+		-0.5f, -0.5f,  0.5f,
+		 0.5f, -0.5f,  0.5f,
+
+		 0.5f, -0.5f,  0.5f,
+		 0.5f,  0.5f,  0.5f,
+
+		 0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f,  0.5f,
+
+		-0.5f,  0.5f,  0.5f,
+		-0.5f, -0.5f,  0.5f,
+
+
+		// Atrás
+		-0.5f, -0.5f, -0.5f,
+		 0.5f, -0.5f, -0.5f,
+
+		 0.5f, -0.5f, -0.5f,
+		 0.5f,  0.5f, -0.5f,
+
+		 0.5f,  0.5f, -0.5f,
+		-0.5f,  0.5f, -0.5f,
+
+		-0.5f,  0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+
+		// Uniones frente-atras
+		-0.5f, -0.5f,  0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		 0.5f, -0.5f,  0.5f,
+		 0.5f, -0.5f, -0.5f,
+
+		 0.5f,  0.5f,  0.5f,
+		 0.5f,  0.5f, -0.5f,
+
+		-0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f, -0.5f
 	};
 
 
 
-
 	GLuint VBO, VAO;
+	GLuint VBOlineas, VAOlineas;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	//glGenBuffers(1, &EBO);
@@ -164,11 +223,55 @@ int main() {
 
 	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs)
 
-	
-	glm::mat4 projection=glm::mat4(1);
+	// ==========================================
+// VAO PARA LAS ARISTAS DEL CUBO
+// ==========================================
 
-	projection = glm::perspective(glm::radians(45.0f), (GLfloat)screenWidth / (GLfloat)screenHeight, 0.1f, 100.0f);//FOV, Radio de aspecto,znear,zfar
-	//projection = glm::ortho(0.0f, (GLfloat)screenWidth, 0.0f, (GLfloat)screenHeight, 0.1f, 1000.0f);//Izq,Der,Fondo,Alto,Cercania,Lejania
+	glGenVertexArrays(1, &VAOlineas);
+	glGenBuffers(1, &VBOlineas);
+
+	glBindVertexArray(VAOlineas);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBOlineas);
+
+	glBufferData(
+		GL_ARRAY_BUFFER,
+		sizeof(verticesLineas),
+		verticesLineas,
+		GL_STATIC_DRAW
+	);
+
+	// Posicion XYZ de las lineas
+	glVertexAttribPointer(
+		0,
+		3,
+		GL_FLOAT,
+		GL_FALSE,
+		3 * sizeof(GLfloat),
+		(GLvoid*)0
+	);
+
+	glEnableVertexAttribArray(0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	glBindVertexArray(0);
+
+
+	// ==========================================
+	// PROYECCION
+	// ==========================================
+
+	glm::mat4 projection = glm::mat4(1);
+
+	projection = glm::perspective(
+		glm::radians(45.0f),
+		(GLfloat)screenWidth / (GLfloat)screenHeight,
+		0.1f,
+		100.0f
+	);
+	
+
 	while (!glfwWindowShouldClose(window))
 	{
 		
@@ -178,7 +281,7 @@ int main() {
 
 		// Render
 		// Clear the colorbuffer
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		glClearColor(0.55f, 0.55f, 0.55f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 
 
@@ -192,6 +295,8 @@ int main() {
 		view = glm::rotate(view, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
 
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
+		GLint colorLineaLoc =
+			glGetUniformLocation(ourShader.Program, "usarColorLinea");
 		GLint viewLoc = glGetUniformLocation(ourShader.Program, "view");
 		GLint projecLoc = glGetUniformLocation(ourShader.Program, "projection");
 
@@ -202,41 +307,38 @@ int main() {
 	
 
 		glBindVertexArray(VAO);
-	
-	    model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(3.0f, 0.1f, 2.0f));
-		model = glm::translate(model, glm::vec3(0.0f, 0.6f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		
-		//pata 1
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f));
-		model = glm::translate(model, glm::vec3(2.9f, -0.6f, 1.9f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		
-		//pata2
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f));
-		model = glm::translate(model, glm::vec3(-2.9f, -0.6f, 1.9f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-		//pata 3
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f));
-		model = glm::translate(model, glm::vec3(-2.9f, -0.6f, -1.9f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		// Pata derecha
 
-		//pata4
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f));
-		model = glm::translate(model, glm::vec3(2.9f, -0.6f, -1.9f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		dibujarCubo(
+			modelLoc, VAO, VAOlineas, colorLineaLoc,
+			0.00f, 0.00f, 0.00f,
+			0.35f, 0.35f, 0.35f
+		);
 
+		dibujarCubo(
+			modelLoc, VAO, VAOlineas, colorLineaLoc,
+			0.00f, -0.35f, 0.00f,
+			0.35f, 0.35f, 0.35f
+		);
+
+		dibujarCubo(
+			modelLoc, VAO, VAOlineas, colorLineaLoc,
+			0.00f, -0.70f, 0.00f,
+			0.35f, 0.35f, 0.35f
+		);
+
+		dibujarCubo(
+			modelLoc, VAO, VAOlineas, colorLineaLoc,
+			0.00f, -1.05f, 0.00f,
+			0.35f, 0.35f, 0.35f
+		);
+
+		dibujarCubo(
+			modelLoc, VAO, VAOlineas, colorLineaLoc,
+			0.35f, -1.05f, 0.00f,
+			0.35f, 0.35f, 0.35f
+		);
 
 		glBindVertexArray(0);
 
@@ -246,6 +348,8 @@ int main() {
 	}
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
+	glDeleteVertexArrays(1, &VAOlineas);
+	glDeleteBuffers(1, &VBOlineas);
 
 
 	glfwTerminate();
@@ -256,21 +360,77 @@ int main() {
 	 if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)  //GLFW_RELEASE
 		 glfwSetWindowShouldClose(window, true);
 	 if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		 movX += 0.08f;
+		 movX += 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		 movX -= 0.08f;
+		 movX -= 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_PAGE_UP) == GLFW_PRESS)
-		 movY += 0.08f;
+		 movY += 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_PAGE_DOWN) == GLFW_PRESS)
-		 movY -= 0.08f;
+		 movY -= 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		 movZ -= 0.08f;
+		 movZ -= 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		 movZ += 0.08f;
+		 movZ += 0.03f;
 	 if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-		 rot += 0.4f;
+		 rot += 0.1f;
 	 if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
-		 rot -= 0.4f;
+		 rot -= 0.1f;
  }
+ void dibujarCubo(
+	 GLint modelLoc,
+	 GLuint VAO,
+	 GLuint VAOlineas,
+	 GLint colorLineaLoc,
+	 float x, float y, float z,
+	 float sx, float sy, float sz
+ )
+ {
+	 glm::mat4 model = glm::mat4(1.0f);
+
+	 model = glm::translate(model, glm::vec3(x, y, z));
+	 model = glm::scale(model, glm::vec3(sx, sy, sz));
+
+	 glUniformMatrix4fv(
+		 modelLoc,
+		 1,
+		 GL_FALSE,
+		 glm::value_ptr(model)
+	 );
 
 
+	 // =========================
+	 // CARAS
+	 // =========================
+
+	 glUniform1i(colorLineaLoc, GL_FALSE);
+
+	 glBindVertexArray(VAO);
+
+	 glDrawArrays(
+		 GL_TRIANGLES,
+		 0,
+		 36
+	 );
+
+
+	 // =========================
+	 // ARISTAS
+	 // =========================
+
+	 glUniform1i(colorLineaLoc, GL_TRUE);
+
+	 glBindVertexArray(VAOlineas);
+
+	 glLineWidth(2.0f);
+
+	 glDrawArrays(
+		 GL_LINES,
+		 0,
+		 24
+	 );
+
+
+	 glBindVertexArray(0);
+
+	 glUniform1i(colorLineaLoc, GL_FALSE);
+ }
