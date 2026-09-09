@@ -311,12 +311,12 @@ int main() {
 		//float y6 = 5.3f;   // Abajo (-) / Arriba (+)
 		//float z6 = 0.0f;   // Profundidad
 		float x6 = -0.4f;   // Izquierda (-) / Derecha (+)
-		float y6 = 3.0f;   // Abajo (-) / Arriba (+)
+		float y6 = 4.0f;   // Abajo (-) / Arriba (+)
 		float z6 = 2.0f;   // Profundidad
 
 		// Valores para controlar la rotación
-		float rx6 = 1.1f;   // Rotación sobre X
-		float ry6 = -0.1f;   // Rotación sobre Y
+		float rx6 = 3.1f;   // Rotación sobre X
+		float ry6 = -1.1f;   // Rotación sobre Y
 		float rz6 = -0.3f;   // Rotación sobre Z
 
 		// Posición del cubo
