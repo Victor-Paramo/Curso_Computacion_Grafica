@@ -33,18 +33,16 @@ void dibujarCubo(
 
 
 const GLint WIDTH = 800, HEIGHT = 600;
+
+// Tamaño base de los bloques del dinosaurio
+const float B = 0.22f;
+
 float movX=0.0f;
 float movY=0.0f;
 float movZ=-5.0f;
 float rot = 0.0f;
 int main() {
 	glfwInit();
-	//Verificación de compatibilidad 
-	// Set all the required options for GLFW
-	/*glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);*/
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
@@ -89,12 +87,7 @@ int main() {
 	// Build and compile our shader program
 	Shader ourShader("Shader/core.vs", "Shader/core.frag");
 
-	//VB0
-	// Set up vertex data (and buffer(s)) and attribute pointers
 
-	
-
-	// use with Perspective Projection
 	float vertices[] = {
 
 		// Frente
@@ -146,6 +139,57 @@ int main() {
 		 -0.5f,  0.5f, -0.5f,   0.20f, 0.75f, 0.20f
 	};
 
+	float verticesNaranja[] = {
+
+		// Frente
+		-0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		-0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		-0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+
+		// Atrás
+		-0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		-0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		-0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+
+		// Derecha
+		 0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+
+		 // Izquierda
+		 -0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+
+		 // Abajo
+		 -0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f, -0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f, -0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+
+		 // Arriba
+		 -0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		  0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f,  0.5f,  0.5f,   1.00f, 0.55f, 0.10f,
+		 -0.5f,  0.5f, -0.5f,   1.00f, 0.55f, 0.10f
+	};
+
 	float verticesLineas[] = {
 
 		// Frente
@@ -194,6 +238,7 @@ int main() {
 
 	GLuint VBO, VAO;
 	GLuint VBOlineas, VAOlineas;
+	GLuint VBOnaranja, VAOnaranja; 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	//glGenBuffers(1, &EBO);
@@ -222,6 +267,54 @@ int main() {
 
 
 	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs)
+
+	// ==========================================
+// VAO PARA CUBOS NARANJAS
+// ==========================================
+
+	GLuint VBOnaranja, VAOnaranja;
+
+	glGenVertexArrays(1, &VAOnaranja);
+	glGenBuffers(1, &VBOnaranja);
+
+	glBindVertexArray(VAOnaranja);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBOnaranja);
+	glBufferData(
+		GL_ARRAY_BUFFER,
+		sizeof(verticesNaranja),
+		verticesNaranja,
+		GL_STATIC_DRAW
+	);
+
+	// Posición
+	glVertexAttribPointer(
+		0, 3, GL_FLOAT, GL_FALSE,
+		6 * sizeof(GLfloat),
+		(GLvoid*)0
+	);
+	glEnableVertexAttribArray(0);
+
+	// Color
+	glVertexAttribPointer(
+		1, 3, GL_FLOAT, GL_FALSE,
+		6 * sizeof(GLfloat),
+		(GLvoid*)(3 * sizeof(GLfloat))
+	);
+	glEnableVertexAttribArray(1);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+
+	// ==========================================
+	// VAO PARA LAS ARISTAS DEL CUBO
+	// ==========================================
+
+	glGenVertexArrays(1, &VAOlineas);
+	glGenBuffers(1, &VBOlineas);
+
+	// ... lo que ya tienes
 
 	// ==========================================
 // VAO PARA LAS ARISTAS DEL CUBO
@@ -308,37 +401,253 @@ int main() {
 
 		glBindVertexArray(VAO);
 
+		// Posición general de la pata derecha
+		float pataDerX = 0.0f;
+		float pataDerY = -1.0f;
+		float pataDerZ = 0.0f;
+
 		// Pata derecha
+		// Cubo extra arriba
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY + B, pataDerZ,
+			B, B, B);
 
-		dibujarCubo(
-			modelLoc, VAO, VAOlineas, colorLineaLoc,
-			0.00f, 0.00f, 0.00f,
-			0.35f, 0.35f, 0.35f
-		);
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY, pataDerZ,
+			B, B, B);
 
-		dibujarCubo(
-			modelLoc, VAO, VAOlineas, colorLineaLoc,
-			0.00f, -0.35f, 0.00f,
-			0.35f, 0.35f, 0.35f
-		);
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - B, pataDerZ,
+			B, B, B);
 
-		dibujarCubo(
-			modelLoc, VAO, VAOlineas, colorLineaLoc,
-			0.00f, -0.70f, 0.00f,
-			0.35f, 0.35f, 0.35f
-		);
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 2 * B, pataDerZ,
+			B, B, B);
 
-		dibujarCubo(
-			modelLoc, VAO, VAOlineas, colorLineaLoc,
-			0.00f, -1.05f, 0.00f,
-			0.35f, 0.35f, 0.35f
-		);
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 3 * B, pataDerZ,
+			B, B, B);
 
-		dibujarCubo(
-			modelLoc, VAO, VAOlineas, colorLineaLoc,
-			0.35f, -1.05f, 0.00f,
-			0.35f, 0.35f, 0.35f
-		);
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - 3 * B, pataDerZ,
+			B, B, B);
+
+		// ==========================================
+// VOLUMEN FRENTE Y ATRÁS - CUBOS 2 Y 3
+// ==========================================
+
+// ==========================================
+// CUBOS LATERALES - NIVELES 2 Y 3
+// ==========================================
+
+// Lateral derecho - nivel del cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY, pataDerZ,
+			B, B, B);
+
+		// Lateral izquierdo - nivel del cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY, pataDerZ,
+			B, B, B);
+
+
+		// Lateral derecho - nivel del cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - B, pataDerZ,
+			B, B, B);
+
+		// Lateral izquierdo - nivel del cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - B, pataDerZ,
+			B, B, B);
+		//Cubo superior trasero
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY + B, pataDerZ,
+			B, B, B);
+		//Cubo inferior trasero 
+
+		//dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+		//	pataDerX, pataDerY - 3 * B, pataDerZ - B,
+		//	B, B, B);
+
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - 1 * B, pataDerY - 3 * B, pataDerZ ,
+			B, B, B);
+
+		// Medio cubo de la pierna
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - 2.25f * B, pataDerZ,
+			B, B / 2.0f, B);
+
+		// ==========================================
+		// CAPA INTERMEDIA - GROSOR DE 1/4 DE CUBO
+		// Duplica exactamente los 13 elementos
+		// ==========================================
+
+		float interZ = pataDerZ - 0.625f * B;
+
+
+		// 1. Cubo superior
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY + B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 2. Cubo principal
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY, interZ,
+			B, B, B / 4.0f);
+
+
+		// 3. Cubo debajo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 4. Cubo inferior de la columna
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 2 * B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 5. Cubo inferior central
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 3 * B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 6. Cubo inferior derecho
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - 3 * B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 7. Lateral derecho - nivel cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY, interZ,
+			B, B, B / 4.0f);
+
+
+		// 8. Lateral izquierdo - nivel cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY, interZ,
+			B, B, B / 4.0f);
+
+
+		// 9. Lateral derecho - nivel cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 10. Lateral izquierdo - nivel cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 11. Cubo superior izquierdo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY + B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 12. Cubo inferior izquierdo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - 3 * B, interZ,
+			B, B, B / 4.0f);
+
+
+		// 13. Medio cubo de la pierna
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - 2.25f * B, interZ,
+			B, B / 2.0f, B / 4.0f);
+
+		// ==========================================
+		// SEGUNDA PARED - 13 ELEMENTOS
+		// ==========================================
+
+		float pared2Z = pataDerZ - 1.25f * B;
+
+
+		// 1. Cubo superior
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY + B, pared2Z,
+			B, B, B);
+
+
+		// 2. Cubo principal
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY, pared2Z,
+			B, B, B);
+
+
+		// 3. Cubo debajo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - B, pared2Z,
+			B, B, B);
+
+
+		// 4. Cubo inferior de la columna
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 2 * B, pared2Z,
+			B, B, B);
+
+
+		// 5. Cubo inferior central
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX, pataDerY - 3 * B, pared2Z,
+			B, B, B);
+
+
+		// 6. Cubo inferior derecho
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - 3 * B, pared2Z,
+			B, B, B);
+
+
+		// 7. Lateral derecho - nivel cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY, pared2Z,
+			B, B, B);
+
+
+		// 8. Lateral izquierdo - nivel cubo 2
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY, pared2Z,
+			B, B, B);
+
+
+		// 9. Lateral derecho - nivel cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX + B, pataDerY - B, pared2Z,
+			B, B, B);
+
+
+		// 10. Lateral izquierdo - nivel cubo 3
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - B, pared2Z,
+			B, B, B);
+
+
+		// 11. Cubo superior izquierdo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY + B, pared2Z,
+			B, B, B);
+
+
+		// 12. Cubo inferior izquierdo
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - 3 * B, pared2Z,
+			B, B, B);
+
+
+		// 13. Medio cubo de la pierna
+		dibujarCubo(modelLoc, VAO, VAOlineas, colorLineaLoc,
+			pataDerX - B, pataDerY - 2.25f * B, pared2Z,
+			B, B / 2.0f, B);
+
 
 		glBindVertexArray(0);
 
@@ -378,7 +687,7 @@ int main() {
  }
  void dibujarCubo(
 	 GLint modelLoc,
-	 GLuint VAO,
+	 GLuint VAOnaranja,
 	 GLuint VAOlineas,
 	 GLint colorLineaLoc,
 	 float x, float y, float z,
