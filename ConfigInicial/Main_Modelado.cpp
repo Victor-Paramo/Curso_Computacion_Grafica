@@ -1,6 +1,6 @@
 //Previo 4
 //González Jiménez Victor Yotecatl
-//Fecha de entrega: 08 - 09 - 2026
+//Fecha de entrega: 12 - 09 - 2026
 //Número de cuenta: 313173743
 
 #include <iostream>
@@ -261,10 +261,255 @@ int main()
          -0.5f, 0.5f,-0.5f,   1.00f,0.55f,0.10f
     };
 
+    // ==========================================
+// CUBO VERDE OSCURO - CRESTAS
+// ==========================================
+
+    float verticesVerdeOscuro[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+         0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+        -0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+        -0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+
+         0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+        -0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+        -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+
+         0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+
+         -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+         -0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+          0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+          0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+          0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f,-0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f,-0.5f,-0.5f,   0.05f,0.35f,0.08f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+          0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f,
+          0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+
+          0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f, 0.5f, 0.5f,   0.05f,0.35f,0.08f,
+         -0.5f, 0.5f,-0.5f,   0.05f,0.35f,0.08f
+    };
+
 
     // ==========================================
     // 12 ARISTAS DEL CUBO
     // ==========================================
+
+    // ==========================================
+// CUBO BLANCO - OJOS
+// ==========================================
+
+    float verticesBlanco[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+         0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+        -0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+        -0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+
+         0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+        -0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+        -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+
+         0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+
+         -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+         -0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+          0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+          0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+          0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f,-0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f,-0.5f,-0.5f,   1.0f,1.0f,1.0f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+          0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f,
+          0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+
+          0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f, 0.5f, 0.5f,   1.0f,1.0f,1.0f,
+         -0.5f, 0.5f,-0.5f,   1.0f,1.0f,1.0f
+    };
+
+
+    // ==========================================
+    // CUBO NEGRO - PUPILA
+    // ==========================================
+
+    float verticesNegro[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+         0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+        -0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+        -0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+
+         0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+        -0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+        -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+
+         0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+
+         -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+         -0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+          0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+          0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+          0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f,-0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f,-0.5f,-0.5f,   0.0f,0.0f,0.0f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+          0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f,
+          0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+
+          0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f, 0.5f, 0.5f,   0.0f,0.0f,0.0f,
+         -0.5f, 0.5f,-0.5f,   0.0f,0.0f,0.0f
+    };
+
+    // ==========================================
+// CUBO VERDE CLARO - PANZA
+// ==========================================
+
+    float verticesVerdeClaro[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+         0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+        -0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+        -0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+
+         0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+        -0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+        -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+
+         0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+
+         -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+         -0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+          0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+          0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+          0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f,-0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f,-0.5f,-0.5f,   0.55f,0.90f,0.30f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+          0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f,
+          0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+
+          0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f, 0.5f, 0.5f,   0.55f,0.90f,0.30f,
+         -0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f
+    };
 
     float verticesLineas[] =
     {
@@ -294,6 +539,10 @@ int main()
 
     GLuint VBO, VAO;
     GLuint VBOnaranja, VAOnaranja;
+    GLuint VBOverdeOscuro, VAOverdeOscuro;
+    GLuint VBOblanco, VAOblanco;
+    GLuint VBOnegro, VAOnegro;
+    GLuint VBOverdeClaro, VAOverdeClaro;
     GLuint VBOlineas, VAOlineas;
 
 
@@ -391,6 +640,159 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    // ==========================================
+// VAO VERDE OSCURO
+// ==========================================
+
+    glGenVertexArrays(1, &VAOverdeOscuro);
+    glGenBuffers(1, &VBOverdeOscuro);
+
+    glBindVertexArray(VAOverdeOscuro);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBOverdeOscuro);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesVerdeOscuro),
+        verticesVerdeOscuro,
+        GL_STATIC_DRAW
+    );
+
+    // Posicion
+    glVertexAttribPointer(
+        0,
+        3,
+        GL_FLOAT,
+        GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+
+    glEnableVertexAttribArray(0);
+
+    // Color
+    glVertexAttribPointer(
+        1,
+        3,
+        GL_FLOAT,
+        GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+    // ==========================================
+// VAO BLANCO
+// ==========================================
+
+    glGenVertexArrays(1, &VAOblanco);
+    glGenBuffers(1, &VBOblanco);
+
+    glBindVertexArray(VAOblanco);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOblanco);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesBlanco),
+        verticesBlanco,
+        GL_STATIC_DRAW
+    );
+
+    glVertexAttribPointer(
+        0, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(
+        1, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+
+    // ==========================================
+    // VAO NEGRO
+    // ==========================================
+
+    glGenVertexArrays(1, &VAOnegro);
+    glGenBuffers(1, &VBOnegro);
+
+    glBindVertexArray(VAOnegro);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOnegro);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesNegro),
+        verticesNegro,
+        GL_STATIC_DRAW
+    );
+
+    glVertexAttribPointer(
+        0, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(
+        1, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+    // ==========================================
+// VAO VERDE CLARO - PANZA
+// ==========================================
+
+    glGenVertexArrays(1, &VAOverdeClaro);
+    glGenBuffers(1, &VBOverdeClaro);
+
+    glBindVertexArray(VAOverdeClaro);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOverdeClaro);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesVerdeClaro),
+        verticesVerdeClaro,
+        GL_STATIC_DRAW
+    );
+
+    // Posicion
+    glVertexAttribPointer(
+        0, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+    glEnableVertexAttribArray(0);
+
+    // Color
+    glVertexAttribPointer(
+        1, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
 
     // ==========================================
     // VAO PARA LAS ARISTAS
@@ -544,7 +946,7 @@ int main()
 
 
         // ==========================================
-        // PRIMERA PARED
+        // PRIMERA  brazos
         // ==========================================
 
         // 1
@@ -818,7 +1220,14 @@ int main()
             B / 2.0f,
             B / 4.0f
         );
-
+        //PARED INTER ANTES DE GARRA PATA 1 PARED 1
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2 * B,
+            pataDerY - 3.0f * B,
+            interZ,
+            B, B, B / 4.0f
+        );
 
         // ==========================================
         // SEGUNDA PARED
@@ -826,7 +1235,14 @@ int main()
 
         float pared2Z =
             pataDerZ - 1.25f * B;
-
+        // 1
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2 * B,
+            pataDerY + -3 * B,
+            pared2Z,
+            B, B, B
+        );
 
         // 1
         dibujarCubo(
@@ -959,19 +1375,31 @@ int main()
             B
         );
 
+        // CUABO ANTES DE GARRA PARED 1 , PATA 1 --------MAL 
 
-// ==========================================
-// GARRAS NARANJAS - PUNTA DEL PIE
-// ==========================================
 
-// Garra de la primera pared
+        //CUBO PARED 1 
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2 * B,
+            pataDerY - 3.0f * B,
+            pared2Z + 1.25 * B,
+            B, B, B
+        );
+
+
+        // ==========================================
+        // GARRAS NARANJAS - PUNTA DEL PIE
+        // ==========================================
+
+        // Garra de la primera pared
         dibujarCubo(
             modelLoc,
             VAOnaranja,
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX + 1.625f * B,   // adelante, en +X
+            pataDerX + 2.625f * B,   // adelante, en +X
             pataDerY - 3.0f * B,     // misma altura del pie
             pataDerZ,                 // primera pared
 
@@ -988,7 +1416,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX + 1.625f * B,   // misma punta
+            pataDerX + 2.625f * B,   // misma punta
             pataDerY - 3.0f * B,
             pared2Z,                  // segunda pared
 
@@ -1057,20 +1485,20 @@ int main()
             pataDerZ - 4.250f * B,
             B, B, B);
 
-    //============================================================================================
-    //PATA IZQUIERDA
-    //============================================================================================
+        //============================================================================================
+        //PATA IZQUIERDA
+        //============================================================================================
 
-          // ==========================================
-        // PRIMERA PARED
-        // ==========================================
+              // ==========================================
+            // PRIMERA PARED
+            // ==========================================
 
-        // 1
+            // 1
         dibujarCubo(
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY + B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1080,7 +1508,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1090,7 +1518,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1100,7 +1528,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - 2.0f * B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1110,7 +1538,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - 3.0f * B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1120,7 +1548,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY - 3.0f * B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1130,7 +1558,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1140,7 +1568,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1150,7 +1578,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY - B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1160,7 +1588,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1170,7 +1598,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY + B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1180,7 +1608,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - 3.0f * B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B, B, B
         );
 
@@ -1190,12 +1618,19 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - 2.25f * B,
-            pataDerZ - 4.250f * B, 
+            pataDerZ - 4.250f * B,
             B,
             B / 2.0f,
             B
         );
-
+        //__________________________CUBO ANTES DE LA GARRA
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY - 3.0f * B,
+            pared2Z - 3.0f * B,
+            B, B, B
+        );
 
         //// ==========================================
         //// CAPA INTERMEDIA
@@ -1204,8 +1639,14 @@ int main()
 
         //float interZ =
         //    pataDerZ - 0.625f * B;
-
-
+//----------------------------------------PARED INTER ATRAS DE GARRA SEGUNDA PATA 
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY - 3 * B,
+            interZ - 4.250f * B,
+            B, B, B / 4.0f
+        );
         // 1
         dibujarCubo(
             modelLoc, VAO, VAOlineas, colorLineaLoc,
@@ -1221,7 +1662,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1231,7 +1672,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1241,7 +1682,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - 2.0f * B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1251,7 +1692,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX,
             pataDerY - 3.0f * B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1261,7 +1702,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY - 3.0f * B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1271,7 +1712,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1281,7 +1722,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1291,7 +1732,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX + B,
             pataDerY - B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1301,7 +1742,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1311,7 +1752,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY + B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1321,7 +1762,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - 3.0f * B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B, B, B / 4.0f
         );
 
@@ -1331,7 +1772,7 @@ int main()
             modelLoc, VAO, VAOlineas, colorLineaLoc,
             pataDerX - B,
             pataDerY - 2.25f * B,
-            interZ- 4.250f * B,
+            interZ - 4.250f * B,
             B,
             B / 2.0f,
             B / 4.0f
@@ -1355,6 +1796,18 @@ int main()
             B, B, B
         );
 
+        //1.55555555555 CUBO ANTES DE GARRAS 
+                // 1
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY - 3.0 * B,
+            pared2Z - 4.250f * B,
+            B, B, B
+        );
+
+
+        //-------------------------------------------------------
 
         // 2
         dibujarCubo(
@@ -1489,7 +1942,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX + 1.625f * B,   // adelante, en +X
+            pataDerX + 2.625f * B,   // adelante, en +X
             pataDerY - 3.0f * B,     // misma altura del pie
             pataDerZ - 4.250f * B,                 // primera pared
 
@@ -1506,7 +1959,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX + 1.625f * B,   // misma punta
+            pataDerX + 2.625f * B,   // misma punta
             pataDerY - 3.0f * B,
             pared2Z - 4.250f * B,                  // segunda pared
 
@@ -1514,6 +1967,2688 @@ int main()
             B,
             B
         );
+
+        // ==========================================
+        // PANZA PARTE BAJA 1
+        // ==========================================
+
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY - 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY - 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+        /////POCISIONAR ----------------
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY - 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        // ==========================================
+        // PANZA PARTE BAJA 1- lado derecho
+        // ==========================================
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        // ==========================================
+        // PANZA PARTE BAJA 2- lado derecho
+        // ==========================================
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------parte delantera
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------parte delantera
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        // ==========================================
+        // COLA 2 CUBOS 
+        // ==========================================
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------PUNTA CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+
+        // ==========================================
+        // 2 lineas pared derecha altura alto pierna der 
+        // ==========================================
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        //pared arriba de la anterior 
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        //pared arriba de la de abajo---donde nace el brazo 
+        //dibujarCubo(//-------------
+        //    modelLoc, VAO, VAOlineas, colorLineaLoc,
+        //    pataDerX - 2.0f * B,
+        //    pataDerY + 2.0f * B,
+        //    pataDerZ - 1.250f * B,
+        //    B, B, B
+        //);
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 3.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B
+        );
+        ////////////-----------------------------------------PARED QUE FORMA LA CABEZA -------------------------------
+
+
+
+
+
+
+
+
+
+
+        /////////////////// LINEA DE LOS OJOS 
+
+        //PARED QUE ANTECEDE LOS OJOS
+
+
+
+
+
+        //LINEA PANZA LATERAL IZQ
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+
+
+
+
+
+
+
+
+
+        //----------------- LINEA LATERAL DERECHA HOCICO 
+
+
+
+
+        //----------------- LINEA LATERAL IZQUIERA HOCICO 
+
+
+
+
+
+        //LATERAL CABEZA IZQUIERDA-------------------------------
+
+
+
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- 1ER NIVEL 
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- 2DO NIVEL 
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- 3ER NIVEL 
+
+        //====================================
+
+
+
+        //===================================== HACIA EL FRENTE PARA CERRAR EL OJO izq
+
+        //===================================== HACIA EL FRENTE PARA CERRAR EL OJO der 
+
+        //cadena para cerrar frente 
+
+        //hocico delantero =========================================================================
+
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- HACIA EL FRENTE HOCICO
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- HACIA EL FRENTE HOCICO 1ER NIVEL 
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- HACIA EL FRENTE HOCICO 2 NIVEL 
+
+        //LATERAL CABEZA IZQUIERDA------------------------------- HACIA EL FRENTE HOCICO 3 NIVEL 
+
+
+        //=======================================================
+        //PARED LATERAL IZQUIERDA
+        //======================================================
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 3.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        //////////////-------------------LINEA DENAJO RESTANDO 1 EN Y 
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        ///////////////////=========DE AQUI DIBUJO 3 CUBOS HACIA HABAJO EN Y
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        ///////////////////======================================= A PARTIR DEL CUBO DE ABAJO CONSTRUIRE LINEA DE PARED IZQUIERDA PARA IR HACIENDO LA COLA 
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY - 1.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------- lINE A ARRIBA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        //unimos cola 
+        dibujarCubo(//------------- CUBO COLA 1er nivel 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+        //=========================
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 4.0f * B,
+            pataDerY,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 3.0f * B,
+            pataDerY,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        //---------------------
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 3.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 3.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );//Voy aqui arriba
+
+        //==========================
+        dibujarCubo(//------------- CUBO COLA 2do nivel 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+        //------------------------------------------------------------------------
+        // PARED FRENTE AL SEGUNDO NIVEL 
+
+        dibujarCubo(//------------- CUBO COLA 2do nivel 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY + B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY + B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        //------------------------------------------------------------------------
+        dibujarCubo(//------------- CUBO COLA 3er nivel 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + 2.0 * B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//------------- CUBO COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + 2.0 * B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+
+        //==================================
+
+
+        dibujarCubo(//-------------  CUBOS 2 COLA------------------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//------------- 
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  PUNTA COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 6.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+
+        dibujarCubo(//-------------  PUNTA COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY - B,
+            pataDerZ - 2.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------  PUNTA COLA
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 5.0f * B,
+            pataDerY - B,
+            pataDerZ - 3.250f * B,
+            B, B, B
+        );
+
+        //============ 2 CUBOS DEBAJO DE LA SECCIÓN ANTERIOR 
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + B,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY,
+            pataDerZ - 4.250f * B,
+            B, B, B
+        );
+
+
+        //TAPA CABEZA ==============================
+
+
+
+
+
+        /////// tapa baja cabeza arriba de la frente -coronilla
+
+
+
+
+        // parte baja boca 2  cubos
+
+
+
+
+
+            //dibujarCubo(//-------------  
+            //    modelLoc, VAO, VAOlineas, colorLineaLoc,
+            //    pataDerX + 7.0f * B,
+            //    pataDerY + 8.0f * B,
+            //    pataDerZ - 1.25f*B,
+            //    B, B, B
+            //);
+
+
+    //brazos  
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.25f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 0.25f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 0.25f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 0.25f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 0.25f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.25f * B,
+            pataDerY + 1.25f * B,
+            pataDerZ - 0.25f * B,
+            B,   // más corta
+            B * 0.65,   // más baja
+            B
+        );
+
+        // brazo izq
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.25f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 5.25f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 5.25f * B,
+            B, B, B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 5.25f * B,
+            B, B, B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.25f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 5.25f * B,
+            B, B, B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.25f * B,
+            pataDerY + 1.25f * B,
+            pataDerZ - 5.25f * B,
+            B,   // más corta
+            B * 0.65,   // más baja
+            B
+        );
+
+        //=============== Taapa epalda ===================
+
+
+
+
+
+        // CABEZA ===================================================================================================================================
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 4.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        //espejo
+        // CABEZA ===================================================================================================================================
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 1.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 4.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 1.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 4.25f * B,
+            B,
+            B,
+            B
+        );
+        //tapa cabeza 
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 11.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        //tapa cabeza parte baja 
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 4.0f * B,
+            pataDerZ - 2.25f * B,
+            B,
+            B,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX,
+            pataDerY + 4.0f * B,
+            pataDerZ - 3.25f * B,
+            B,
+            B,
+            B
+        );
+
+        // CRESTA VERDE OSCURO
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX,
+            pataDerY+ 9.0f*B,
+            pataDerZ- 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX,
+            pataDerY + 9.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX-B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - B,
+            pataDerY + 5.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 2.0f*B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 2.0f*B,
+            pataDerY + 4.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 2.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 2.0f * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+        // CUBO DE ABAJO
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX - 2.75f * B,   // antes -3.0B
+            pataDerY + B,
+            pataDerZ - 1.25f * B,
+
+            B / 2.0f,   // mitad en X
+            B,          // Y completo
+            B
+        );
+
+        // CUBO DE ARRIBA - ALTURA 2/3
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.75f * B,
+            pataDerY + 1.8333f * B,
+            pataDerZ - 1.25f * B,
+
+            B / 2.0f,
+            B* (2.0f / 3.0f),
+            B
+        );
+        // CUBO DE ABAJO
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX - 2.75f * B,   // antes -3.0B
+            pataDerY + B,
+            pataDerZ - 4.25f * B,
+
+            B / 2.0f,   // mitad en X
+            B,          // Y completo
+            B
+        );
+
+        // CUBO DE ARRIBA - ALTURA 2/3
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX - 2.75f * B,
+            pataDerY + 1.8333f * B,
+            pataDerZ - 4.25f * B,
+
+            B / 2.0f,
+            B* (2.0f / 3.0f),
+            B
+        );
+        //    regresando a la cresta verde --------------------------------
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 3.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 3.0f * B,
+            pataDerY + 2.0f * B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 3.0f * B,
+            pataDerY + B,
+            pataDerZ - 2.25f * B,
+
+            B,
+            B,
+            B
+        );
+        dibujarCubo(
+            modelLoc,
+            VAOverdeOscuro,
+            VAOlineas,
+            colorLineaLoc,
+
+            pataDerX - 3.0f * B,
+            pataDerY + B,
+            pataDerZ - 3.25f * B,
+
+            B,
+            B,
+            B
+        );
+
+
+
+
+        /////==============================
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 2.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 3.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 7.0f * B,
+            pataDerZ - 4.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 2.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 3.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 2.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 3.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+        //================================hocico alto
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 2.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 3.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 10.0f * B,
+            pataDerZ - 4.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+
+        //nariz ----------------------------------------------------
+
+// CUBO 1
+// CUBO 1
+        dibujarCubo(//-------------   
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.00f * B,
+            B,
+            B,
+            B / 2.0f
+        );
+
+        // CUBO 2
+        dibujarCubo(//-------------   
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 2.50f * B,
+            B,
+            B,
+            B / 2.0f
+        );
+
+        // CUBO 3
+        dibujarCubo(//-------------   
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 3.00f * B,
+            B,
+            B,
+            B / 2.0f
+        );
+
+        // CUBO 3
+// CUBO 4
+        dibujarCubo(//-------------   
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 7.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.50f * B,
+            B,
+            B,
+            B / 2.0f
+        );
+
+        // ojos blancos derecha
+
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 8.0f*B,
+            pataDerZ - 1.250f * B,
+            B, B, B);
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B);
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 1.250f * B,
+            B, B, B);
+
+        // ojos blancos izquierda
+
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B);
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 8.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B);
+        dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 4.250f * B,
+            B, B, B);
+
+        // PUPILA NEGRA
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 8.5f * B,
+            pataDerZ - 1.2f * B,
+            B ,
+            B ,
+            B 
+        );
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX + 4.0f * B,
+            pataDerY + 8.5f * B,
+            pataDerZ - 4.3f * B,
+            B,
+            B,
+            B
+        );
+
+        //          panza clara 
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY,
+            pataDerZ - 2.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY,
+            pataDerZ - 3.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY +B,
+            pataDerZ - 2.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY +B,
+            pataDerZ - 3.250f * B,
+            B, B, B);
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY + 2.0f*B,
+            pataDerZ - 2.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY + 2.0f* B,
+            pataDerZ - 3.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 2.250f * B,
+            B, B, B);
+
+        dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
+            pataDerX + 3 * B,
+            pataDerY + 3.0f * B,
+            pataDerZ - 3.250f * B,
+            B, B, B);
+
+        // HOCICO - MEDIO CUBO 1
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX + 4.0f * B,
+            pataDerY + 5.75f * B,   // mitad inferior
+            pataDerZ - 1.25f * B,
+
+            B,
+            B / 2.0f,
+            B
+        );
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX + 5.0f * B,
+            pataDerY + 5.65f * B,   // mitad inferior
+            pataDerZ - 1.25f * B,
+
+            B,
+            B / 2.0f,
+            B
+        );
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 2.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 1.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 3.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        dibujarCubo(//-------------  
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+            pataDerX + 6.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 4.25f * B,
+            B,   // más corta
+            B,   // más baja
+            B
+        );
+
+        // HOCICO - MEDIO CUBO 1
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX + 4.0f * B,
+            pataDerY + 5.75f * B,   // mitad inferior
+            pataDerZ - 4.25f * B,
+
+            B,
+            B / 2.0f,
+            B
+        );
+
+        dibujarCubo(
+            modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+            pataDerX + 5.0f * B,
+            pataDerY + 5.65f * B,   // mitad inferior
+            pataDerZ - 4.25f * B,
+
+            B,
+            B / 2.0f,
+            B
+        );
+        // LENGUA NARANJA - 1/4 DE PROFUNDIDAD HACIA +Z
+        dibujarCubo(
+            modelLoc, VAOnaranja, VAOlineas, colorLineaLoc,
+
+            pataDerX + 6.0f * B,
+            pataDerY + 6.0f * B,
+            pataDerZ - 0.75f * B,   // pegada hacia +Z, más cerca de ti
+
+            B,
+            B,
+            B / 4.0f                 // solo 1/4 de profundidad
+        );
+        //// HOCICO - MEDIO CUBO 2
+        //dibujarCubo(
+        //    modelLoc, VAO, VAOlineas, colorLineaLoc,
+
+        //    X,
+        //    Y - 0.25f * B,   // mantiene la mitad de abajo
+        //    Z,
+
+        //    B,
+        //    B / 2.0f,        // mitad de altura
+        //    B
+        //);
 
         glBindVertexArray(0);
 
