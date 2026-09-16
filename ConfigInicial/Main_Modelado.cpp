@@ -511,6 +511,130 @@ int main()
          -0.5f, 0.5f,-0.5f,   0.55f,0.90f,0.30f
     };
 
+
+    // ==========================================
+    // CUBO Cafe
+    // ==========================================
+
+    float verticesCafe[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+         0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+        -0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+        -0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+
+         0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+        -0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+        -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+
+         0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+
+         -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+         -0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+          0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+          0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+          0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f,-0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f,-0.5f,-0.5f,   0.45f,0.24f,0.08f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+          0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f,
+          0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+
+          0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f, 0.5f, 0.5f,   0.45f,0.24f,0.08f,
+         -0.5f, 0.5f,-0.5f,   0.45f,0.24f,0.08f
+    };
+
+
+    // ==========================================
+    // CUBO Gris
+    // ==========================================
+
+    float verticesGris[] =
+    {
+        // Frente
+        -0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+         0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+        -0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+        -0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+        // Atras
+        -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+
+         0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+        -0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+        -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+
+        // Derecha
+         0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+
+         0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+         // Izquierda
+         -0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+
+         -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+         -0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+         // Abajo
+         -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+          0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+          0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+          0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f,-0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f,-0.5f,-0.5f,   0.30f,0.30f,0.34f,
+
+         // Arriba
+         -0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+          0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f,
+          0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+
+          0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f, 0.5f, 0.5f,   0.30f,0.30f,0.34f,
+         -0.5f, 0.5f,-0.5f,   0.30f,0.30f,0.34f
+    };
+
     float verticesLineas[] =
     {
         // Frente
@@ -543,6 +667,8 @@ int main()
     GLuint VBOblanco, VAOblanco;
     GLuint VBOnegro, VAOnegro;
     GLuint VBOverdeClaro, VAOverdeClaro;
+    GLuint VBOcafe, VAOcafe;
+    GLuint VBOgris, VAOgris;
     GLuint VBOlineas, VAOlineas;
 
 
@@ -784,6 +910,76 @@ int main()
     glEnableVertexAttribArray(0);
 
     // Color
+    glVertexAttribPointer(
+        1, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+
+    // ==========================================
+    // VAO CAFE - PATINETA
+    // ==========================================
+
+    glGenVertexArrays(1, &VAOcafe);
+    glGenBuffers(1, &VBOcafe);
+
+    glBindVertexArray(VAOcafe);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOcafe);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesCafe),
+        verticesCafe,
+        GL_STATIC_DRAW
+    );
+
+    glVertexAttribPointer(
+        0, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(
+        1, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)(3 * sizeof(GLfloat))
+    );
+    glEnableVertexAttribArray(1);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
+
+    // ==========================================
+    // VAO GRIS - GORRA
+    // ==========================================
+
+    glGenVertexArrays(1, &VAOgris);
+    glGenBuffers(1, &VBOgris);
+
+    glBindVertexArray(VAOgris);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOgris);
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(verticesGris),
+        verticesGris,
+        GL_STATIC_DRAW
+    );
+
+    glVertexAttribPointer(
+        0, 3, GL_FLOAT, GL_FALSE,
+        6 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+    glEnableVertexAttribArray(0);
+
     glVertexAttribPointer(
         1, 3, GL_FLOAT, GL_FALSE,
         6 * sizeof(GLfloat),
@@ -3923,8 +4119,8 @@ int main()
             colorLineaLoc,
 
             pataDerX,
-            pataDerY+ 9.0f*B,
-            pataDerZ- 2.25f * B,
+            pataDerY + 9.0f * B,
+            pataDerZ - 2.25f * B,
 
             B,
             B,
@@ -3965,7 +4161,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX-B,
+            pataDerX - B,
             pataDerY + 9.0f * B,
             pataDerZ - 3.25f * B,
 
@@ -4069,7 +4265,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX - 2.0f*B,
+            pataDerX - 2.0f * B,
             pataDerY + 4.0f * B,
             pataDerZ - 2.25f * B,
 
@@ -4083,7 +4279,7 @@ int main()
             VAOlineas,
             colorLineaLoc,
 
-            pataDerX - 2.0f*B,
+            pataDerX - 2.0f * B,
             pataDerY + 4.0f * B,
             pataDerZ - 3.25f * B,
 
@@ -4143,7 +4339,7 @@ int main()
             pataDerZ - 1.25f * B,
 
             B / 2.0f,
-            B* (2.0f / 3.0f),
+            B * (2.0f / 3.0f),
             B
         );
         // CUBO DE ABAJO
@@ -4167,7 +4363,7 @@ int main()
             pataDerZ - 4.25f * B,
 
             B / 2.0f,
-            B* (2.0f / 3.0f),
+            B * (2.0f / 3.0f),
             B
         );
         //    regresando a la cresta verde --------------------------------
@@ -4425,7 +4621,7 @@ int main()
 
         dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
             pataDerX + 4.0f * B,
-            pataDerY + 8.0f*B,
+            pataDerY + 8.0f * B,
             pataDerZ - 1.250f * B,
             B, B, B);
         dibujarCubo(modelLoc, VAOblanco, VAOlineas, colorLineaLoc,
@@ -4475,9 +4671,9 @@ int main()
             pataDerX + 4.0f * B,
             pataDerY + 8.5f * B,
             pataDerZ - 1.2f * B,
-            B ,
-            B ,
-            B 
+            B,
+            B,
+            B
         );
         dibujarCubo(
             modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
@@ -4504,24 +4700,24 @@ int main()
 
         dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
             pataDerX + 3 * B,
-            pataDerY +B,
+            pataDerY + B,
             pataDerZ - 2.250f * B,
             B, B, B);
 
         dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
             pataDerX + 3 * B,
-            pataDerY +B,
+            pataDerY + B,
             pataDerZ - 3.250f * B,
             B, B, B);
         dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
             pataDerX + 3 * B,
-            pataDerY + 2.0f*B,
+            pataDerY + 2.0f * B,
             pataDerZ - 2.250f * B,
             B, B, B);
 
         dibujarCubo(modelLoc, VAOverdeClaro, VAOlineas, colorLineaLoc,
             pataDerX + 3 * B,
-            pataDerY + 2.0f* B,
+            pataDerY + 2.0f * B,
             pataDerZ - 3.250f * B,
             B, B, B);
 
@@ -4650,6 +4846,147 @@ int main()
         //    B
         //);
 
+
+        // ============================================================
+        // PATINETA CAFE - MAS LARGA Y MAS ANCHA
+        // ============================================================
+
+        // Tabla principal cafe
+        dibujarCubo(
+            modelLoc, VAOcafe, VAOlineas, colorLineaLoc,
+            pataDerX + 0.75f * B,
+            pataDerY - 3.6667f * B,
+            pataDerZ - 2.125f * B,
+            8.5f * B,          // largo
+            B / 3.0f,
+            7.0f * B           // mas ancha en Z
+        );
+
+        // Punta delantera levantada
+        dibujarCubo(
+            modelLoc, VAOcafe, VAOlineas, colorLineaLoc,
+            pataDerX + 5.0f * B,
+            pataDerY - 3.50f * B,
+            pataDerZ - 2.125f * B,
+            B,
+            B / 2.0f,
+            7.0f * B
+        );
+
+        // Punta trasera levantada
+        dibujarCubo(
+            modelLoc, VAOcafe, VAOlineas, colorLineaLoc,
+            pataDerX - 3.5f * B,
+            pataDerY - 3.50f * B,
+            pataDerZ - 2.125f * B,
+            B,
+            B / 2.0f,
+            7.0f * B
+        );
+
+
+        // ============================================================
+        // EJES DE LA PATINETA
+        // ============================================================
+
+        // Eje delantero
+        dibujarCubo(
+            modelLoc, VAOgris, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY - 4.00f * B,
+            pataDerZ - 2.125f * B,
+            B / 2.0f,
+            B / 3.0f,
+            6.2f * B
+        );
+
+        // Eje trasero
+        dibujarCubo(
+            modelLoc, VAOgris, VAOlineas, colorLineaLoc,
+            pataDerX - 1.5f * B,
+            pataDerY - 4.00f * B,
+            pataDerZ - 2.125f * B,
+            B / 2.0f,
+            B / 3.0f,
+            6.2f * B
+        );
+
+
+        // ============================================================
+        // RUEDAS NEGRAS - MAS GRANDES Y MEJOR DEFINIDAS
+        // ============================================================
+
+        // Delantera cercana
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY - 4.30f * B,
+            pataDerZ + 0.80f * B,
+            0.85f * B,
+            0.85f * B,
+            0.70f * B
+        );
+
+        // Trasera cercana
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX - 1.5f * B,
+            pataDerY - 4.30f * B,
+            pataDerZ + 0.80f * B,
+            0.85f * B,
+            0.85f * B,
+            0.70f * B
+        );
+
+        // Delantera lejana
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX + 3.0f * B,
+            pataDerY - 4.30f * B,
+            pataDerZ - 5.05f * B,
+            0.85f * B,
+            0.85f * B,
+            0.70f * B
+        );
+
+        // Trasera lejana
+        dibujarCubo(
+            modelLoc, VAOnegro, VAOlineas, colorLineaLoc,
+            pataDerX - 1.5f * B,
+            pataDerY - 4.30f * B,
+            pataDerZ - 5.05f * B,
+            0.85f * B,
+            0.85f * B,
+            0.70f * B
+        );
+
+
+        // ============================================================
+        // GORRA GRIS OSCURO
+        // ============================================================
+
+        // Copa de la gorra
+        dibujarCubo(
+            modelLoc, VAOgris, VAOlineas, colorLineaLoc,
+            pataDerX + 2.0f * B,
+            pataDerY + 12.0f * B,
+            pataDerZ - 2.75f * B,
+            3.0f * B,
+            B,
+            2.0f * B
+        );
+
+        // Visera
+        dibujarCubo(
+            modelLoc, VAOgris, VAOlineas, colorLineaLoc,
+            pataDerX + 4.25f * B,
+            pataDerY + 11.60f * B,
+            pataDerZ - 2.75f * B,
+            2.5f * B,
+            B / 3.0f,
+            2.0f * B
+        );
+
         glBindVertexArray(0);
 
         glfwSwapBuffers(window);
@@ -4665,6 +5002,12 @@ int main()
 
     glDeleteVertexArrays(1, &VAOnaranja);
     glDeleteBuffers(1, &VBOnaranja);
+
+    glDeleteVertexArrays(1, &VAOcafe);
+    glDeleteBuffers(1, &VBOcafe);
+
+    glDeleteVertexArrays(1, &VAOgris);
+    glDeleteBuffers(1, &VBOgris);
 
     glDeleteVertexArrays(1, &VAOlineas);
     glDeleteBuffers(1, &VBOlineas);
@@ -4686,22 +5029,22 @@ void Inputs(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        movX += 0.03f;
+        movX += 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        movX -= 0.03f;
+        movX -= 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_PAGE_UP) == GLFW_PRESS)
-        movY += 0.03f;
+        movY += 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_PAGE_DOWN) == GLFW_PRESS)
-        movY -= 0.03f;
+        movY -= 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        movZ -= 0.03f;
+        movZ -= 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        movZ += 0.03f;
+        movZ += 0.01f;
 
     if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
         rot += 0.1f;
