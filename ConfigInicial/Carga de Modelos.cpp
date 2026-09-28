@@ -3,7 +3,6 @@
 //Fecha de entrega: 27 - 09 - 2026
 //Número de cuenta: 31317374-3
 
-
 // Std. Includes
 #include <string>
 #include <vector>
