@@ -1,62 +1,68 @@
+//PRáctica 7 
+//González Jiménez Victor Yotecatl
+//Fecha de entrega: 04 - 10 - 2026
+//Número de cuenta: 31317374 - 3
+
 #include <iostream>
 #include <cmath>
+#include <vector> // AGREGADO: CUADRICULA
 
-// GLEW
-#include <GL/glew.h>
+// GLEW 
+#include <GL/glew.h> 
 
-// GLFW
-#include <GLFW/glfw3.h>
+// GLFW 
+#include <GLFW/glfw3.h> 
 
-// Other Libs
-#include "stb_image.h"
+// Other Libs 
+#include "stb_image.h" 
 
-// GLM Mathematics
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+// GLM Mathematics 
+#include <glm/glm.hpp> 
+#include <glm/gtc/matrix_transform.hpp> 
+#include <glm/gtc/type_ptr.hpp> 
 
-// Other includes
-#include "Shader.h"
-#include "Camera.h"
+// Other includes 
+#include "Shader.h" 
+#include "Camera.h" 
 
 
-// Function prototypes
+// Function prototypes 
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
 
-// Window dimensions
+// Window dimensions 
 const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
-// Camera
+// Camera 
 Camera  camera(glm::vec3(0.0f, 0.0f, 3.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
 bool firstMouse = true;
 
-// Light attributes
+// Light attributes 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
-// Deltatime
-GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
-GLfloat lastFrame = 0.0f;  	// Time of last frame
+// Deltatime 
+GLfloat deltaTime = 0.0f;	// Time between current frame and last frame 
+GLfloat lastFrame = 0.0f;  	// Time of last frame 
 
-// The MAIN function, from here we start the application and run the game loop
+// The MAIN function, from here we start the application and run the game loop 
 int main()
 {
-	// Init GLFW
+	// Init GLFW 
 	glfwInit();
-	// Set all the required options for GLFW
+	// Set all the required options for GLFW 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	// Create a GLFWwindow object that we can use for GLFW's functions
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Texturizado", nullptr, nullptr);
+	// Create a GLFWwindow object that we can use for GLFW's functions 
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Victor Yotecatl", nullptr, nullptr);
 
 	if (nullptr == window)
 	{
@@ -70,52 +76,104 @@ int main()
 
 	glfwGetFramebufferSize(window, &SCREEN_WIDTH, &SCREEN_HEIGHT);
 
-	// Set the required callback functions
+	// Set the required callback functions 
 	glfwSetKeyCallback(window, KeyCallback);
-	//glfwSetCursorPosCallback(window, MouseCallback);
+	//glfwSetCursorPosCallback(window, MouseCallback); 
 
-	// GLFW Options
+	// GLFW Options 
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
-	// Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
+	// Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions 
 	glewExperimental = GL_TRUE;
-	// Initialize GLEW to setup the OpenGL Function pointers
+	// Initialize GLEW to setup the OpenGL Function pointers 
 	if (GLEW_OK != glewInit())
 	{
 		std::cout << "Failed to initialize GLEW" << std::endl;
 		return EXIT_FAILURE;
 	}
-
-	// Define the viewport dimensions
+	
+	// Define the viewport dimensions 
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-	// OpenGL options
+	// OpenGL options 
 	glEnable(GL_DEPTH_TEST);
 
 
-	// Build and compile our shader program
+	// Build and compile our shader program 
 	Shader lampShader("Shader/lamp.vs", "Shader/lamp.frag");
 
-	// Set up vertex data (and buffer(s)) and attribute pointers
+	// Set up vertex data (and buffer(s)) and attribute pointers 
 	GLfloat vertices[] =
 	{
 		// Positions            // Colors              // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f,
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		1.0f,0.0f,
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,1.0f,
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,
 
+		// Cara frontal - Numero 2 - mayor margen para mostrar el marco
+		-0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2705f, 0.3480f,
+		 0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.5015f, 0.3480f,
+		 0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.5015f, 0.6410f,
+		-0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2705f, 0.6410f,
 
+		// Cara trasera - Numero 5
+		 0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.9560f, 0.3460f,
+		-0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.7210f, 0.3460f,
+		-0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.7210f, 0.6430f,
+		 0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.9560f, 0.6430f,
+
+		 // Cara izquierda - Numero 3 - ajuste del borde derecho
+		 -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.0470f, 0.3480f,
+		 -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2730f, 0.3480f,
+		 -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2730f, 0.6410f,
+		 -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.0470f, 0.6410f,
+
+		 // Cara derecha - Numero 4
+		  0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.7280f, 0.3520f,
+		  0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.4970f, 0.3520f,
+		  0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.4970f, 0.6380f,
+		  0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.7280f, 0.6380f,
+
+		  // Cara superior - Numero 1 - desplazamiento para centrar el marco
+		  -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2710f, 0.6350f,
+		   0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.5010f, 0.6350f,
+		   0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.5010f, 0.9270f,
+		  -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.2710f, 0.9270f,
+
+		  // Cara inferior - Numero 6 - segundo zoom fino
+		  -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.2705f, 0.0665f,
+		   0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,     0.5015f, 0.0665f,
+		   0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.5015f, 0.3535f,
+		  -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.2705f, 0.3535f,
 	};
 
 	GLuint indices[] =
 	{  // Note that we start from 0!
-		0,1,3,
-		1,2,3
+
+		// Cara frontal
+		0, 1, 3,
+		1, 2, 3,
+
+		// Cara trasera
+		4, 5, 7,
+		5, 6, 7,
+
+		// Cara izquierda
+		8, 9, 11,
+		9, 10, 11,
+
+		// Cara derecha
+		12, 13, 15,
+		13, 14, 15,
+
+		// Cara superior
+		16, 17, 19,
+		17, 18, 19,
+
+		// Cara inferior
+		20, 21, 23,
+		21, 22, 23
 
 	};
 
-	// First, set the container's VAO (and VBO)
+	// First, set the container's VAO (and VBO) 
 	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -128,18 +186,104 @@ int main()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-	// Position attribute
+	// Position attribute 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
-	// Color attribute
+	// Color attribute 
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
-	// Texture Coordinate attribute
+	// Texture Coordinate attribute 
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(2);
 	glBindVertexArray(0);
 
-	// Load textures
+
+	// AGREGADO: CUADRICULA
+	std::vector<GLfloat> gridVertices;
+
+	float gridSize = 10.0f;
+	float gridStep = 1.0f;
+	float floorY = -1.0f;
+
+	for (float i = -gridSize; i <= gridSize; i += gridStep)
+	{
+		// Lineas paralelas al eje Z
+		gridVertices.push_back(i);
+		gridVertices.push_back(floorY);
+		gridVertices.push_back(-gridSize);
+
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+
+		gridVertices.push_back(0.0f);
+		gridVertices.push_back(0.0f);
+
+
+		gridVertices.push_back(i);
+		gridVertices.push_back(floorY);
+		gridVertices.push_back(gridSize);
+
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+
+		gridVertices.push_back(0.0f);
+		gridVertices.push_back(0.0f);
+
+
+		// Lineas paralelas al eje X
+		gridVertices.push_back(-gridSize);
+		gridVertices.push_back(floorY);
+		gridVertices.push_back(i);
+
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+
+		gridVertices.push_back(0.0f);
+		gridVertices.push_back(0.0f);
+
+
+		gridVertices.push_back(gridSize);
+		gridVertices.push_back(floorY);
+		gridVertices.push_back(i);
+
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+		gridVertices.push_back(1.0f);
+
+		gridVertices.push_back(0.0f);
+		gridVertices.push_back(0.0f);
+	}
+
+	GLuint gridVAO, gridVBO;
+
+	glGenVertexArrays(1, &gridVAO);
+	glGenBuffers(1, &gridVBO);
+
+	glBindVertexArray(gridVAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, gridVBO);
+	glBufferData(GL_ARRAY_BUFFER, gridVertices.size() * sizeof(GLfloat), gridVertices.data(), GL_STATIC_DRAW);
+
+	// Position attribute
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
+	glEnableVertexAttribArray(0);
+
+	// Color attribute
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+	glEnableVertexAttribArray(1);
+
+	// Texture Coordinate attribute
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+	glEnableVertexAttribArray(2);
+
+	glBindVertexArray(0);
+	// FIN AGREGADO: CUADRICULA
+
+
+	// Load textures 
 	GLuint texture1;
 	glGenTextures(1, &texture1);
 	glBindTexture(GL_TEXTURE_2D, texture1);
@@ -150,79 +294,156 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-	// Diffuse map
-	image = stbi_load("images/window.png", &textureWidth, &textureHeight, &nrChannels, 0);
-	glBindTexture(GL_TEXTURE_2D, texture1);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
-	glGenerateMipmap(GL_TEXTURE_2D);
+	// Diffuse map 
+	image = stbi_load("images/dado.png", &textureWidth, &textureHeight, &nrChannels, 0);
+
 	if (image)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+		GLenum format;
+
+		if (nrChannels == 4)
+			format = GL_RGBA;
+		else
+			format = GL_RGB;
+
+		glBindTexture(GL_TEXTURE_2D, texture1);
+
+		glTexImage2D(
+			GL_TEXTURE_2D,
+			0,
+			format,
+			textureWidth,
+			textureHeight,
+			0,
+			format,
+			GL_UNSIGNED_BYTE,
+			image
+		);
+
 		glGenerateMipmap(GL_TEXTURE_2D);
+
+		std::cout << "Textura cargada correctamente" << std::endl;
+		std::cout << "Ancho: " << textureWidth << std::endl;
+		std::cout << "Alto: " << textureHeight << std::endl;
+		std::cout << "Canales: " << nrChannels << std::endl;
 	}
 	else
 	{
-		std::cout << "Failed to load texture" << std::endl;
+		std::cout << "ERROR: No se pudo cargar images/dado.png" << std::endl;
+		std::cout << stbi_failure_reason() << std::endl;
 	}
+
 	stbi_image_free(image);
 
 
+	// AGREGADO: textura blanca para las lineas de la cuadricula
+	GLuint gridTexture;
+	glGenTextures(1, &gridTexture);
+	glBindTexture(GL_TEXTURE_2D, gridTexture);
 
-	// Game loop
+	unsigned char whitePixel[] = { 255, 255, 255, 255 };
+
+	glTexImage2D(
+		GL_TEXTURE_2D,
+		0,
+		GL_RGBA,
+		1,
+		1,
+		0,
+		GL_RGBA,
+		GL_UNSIGNED_BYTE,
+		whitePixel
+	);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	// FIN AGREGADO
+
+
+	// Game loop 
 	while (!glfwWindowShouldClose(window))
 	{
-		// Calculate deltatime of current frame
+		// Calculate deltatime of current frame 
 		GLfloat currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
 
-		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
+		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions 
 		glfwPollEvents();
 		DoMovement();
 
-		// Clear the colorbuffer
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		// Clear the colorbuffer 
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		lampShader.Use();
-		//// Create camera transformations
+		//// Create camera transformations 
 		glm::mat4 view;
 		view = camera.GetViewMatrix();
 		glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 		glm::mat4 model(1);
-		// Get location objects for the matrices on the lamp shader (these could be different on a different shader)
-		// Get the uniform locations
+		// Get location objects for the matrices on the lamp shader (these could be different on a different shader) 
+		// Get the uniform locations 
 		GLint modelLoc = glGetUniformLocation(lampShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(lampShader.Program, "view");
 		GLint projLoc = glGetUniformLocation(lampShader.Program, "projection");
 
-		// Bind diffuse map
+		// Bind diffuse map 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture1);
 
-		// Set matrices
+		// Set matrices 
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		// Draw the light object (using light's vertex attributes)
+		// Draw the light object (using light's vertex attributes) 
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
-		// Swap the screen buffers
+
+		// AGREGADO: dibujar cuadricula
+		glBindTexture(GL_TEXTURE_2D, gridTexture);
+
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		glBindVertexArray(gridVAO);
+
+		glLineWidth(1.0f);
+
+		glDrawArrays(
+			GL_LINES,
+			0,
+			static_cast<GLsizei>(gridVertices.size() / 8)
+		);
+
+		glBindVertexArray(0);
+		// FIN AGREGADO
+
+
+		// Swap the screen buffers 
 		glfwSwapBuffers(window);
 	}
 
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
-	// Terminate GLFW, clearing any resources allocated by GLFW.
+
+
+	// AGREGADO: limpiar cuadricula
+	glDeleteVertexArrays(1, &gridVAO);
+	glDeleteBuffers(1, &gridVBO);
+	glDeleteTextures(1, &gridTexture);
+	// FIN AGREGADO
+
+
+	// Terminate GLFW, clearing any resources allocated by GLFW. 
 	glfwTerminate();
 
 	return 0;
 }
 
-// Moves/alters the camera positions based on user input
+// Moves/alters the camera positions based on user input 
 void DoMovement()
 {
 	// Camera controls
@@ -246,28 +467,33 @@ void DoMovement()
 		camera.ProcessKeyboard(RIGHT, deltaTime);
 	}
 
+
+	// Flechas: solamente cambian el angulo de la mirada
+	// No modifican la posicion de la camara
+
+	GLfloat lookSpeed = 150.0f * deltaTime;
+
 	if (keys[GLFW_KEY_UP])
 	{
-		camera.ProcessKeyboard(UP, deltaTime);
+		camera.ProcessMouseMovement(0.0f, lookSpeed);
 	}
 
 	if (keys[GLFW_KEY_DOWN])
 	{
-		camera.ProcessKeyboard(DOWN, deltaTime);
+		camera.ProcessMouseMovement(0.0f, -lookSpeed);
 	}
 
 	if (keys[GLFW_KEY_LEFT])
 	{
-		camera.ProcessKeyboard(LEFT, deltaTime);
+		camera.ProcessMouseMovement(-lookSpeed, 0.0f);
 	}
 
 	if (keys[GLFW_KEY_RIGHT])
 	{
-		camera.ProcessKeyboard(RIGHT, deltaTime);
+		camera.ProcessMouseMovement(lookSpeed, 0.0f);
 	}
 }
-
-// Is called whenever a key is pressed/released via GLFW
+// Is called whenever a key is pressed/released via GLFW 
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
 	if (GLFW_KEY_ESCAPE == key && GLFW_PRESS == action)
@@ -298,11 +524,11 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 	}
 
 	GLfloat xOffset = xPos - lastX;
-	GLfloat yOffset = lastY - yPos;  // Reversed since y-coordinates go from bottom to left
+	GLfloat yOffset = lastY - yPos;  // Reversed since y-coordinates go from bottom to left 
 
 	lastX = xPos;
 	lastY = yPos;
 
-	// Control de camara con mouse desactivado
-	//camera.ProcessMouseMovement(xOffset, yOffset);
+	// Control de camara con mouse desactivado 
+	//camera.ProcessMouseMovement(xOffset, yOffset); 
 }
