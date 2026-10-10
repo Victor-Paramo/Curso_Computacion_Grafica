@@ -44,6 +44,18 @@
     <None Include="Shader\lighting.vs">
       <Filter>Archivos de origen\Shader</Filter>
     </None>
+    <None Include="..\..\..\Documents\shaders\sphere.frag">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
+    <None Include="..\..\..\Documents\shaders\sphere.vs">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
+    <None Include="Shader\sun.frag">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
+    <None Include="Shader\sun.vs">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Iluminacion.cpp">

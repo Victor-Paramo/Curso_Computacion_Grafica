@@ -23,12 +23,16 @@
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\Documents\shaders\sphere.frag" />
+    <None Include="..\..\..\Documents\shaders\sphere.vs" />
     <None Include="Shader\lamp.frag" />
     <None Include="Shader\lamp.vs" />
     <None Include="Shader\lighting.frag" />
     <None Include="Shader\lighting.vs" />
     <None Include="Shader\modelLoading.frag" />
     <None Include="Shader\modelLoading.vs" />
+    <None Include="Shader\sun.frag" />
+    <None Include="Shader\sun.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Iluminacion.cpp" />

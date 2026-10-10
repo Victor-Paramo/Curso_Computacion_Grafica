@@ -1,4 +1,4 @@
-//Prárctica 8
+//Prárctica 6
 //González Jiménez Victor Yotecatl
 //Fecha de entrega: 27 - 09 - 2026
 //Número de cuenta: 31317374-3

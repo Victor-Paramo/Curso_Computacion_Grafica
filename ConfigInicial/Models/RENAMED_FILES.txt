@@ -1,0 +1,13 @@
+1278690406_1267376691__0-10611.jpg -> book_cover1.jpg
+books_texture3009.jpg -> book_cover2.jpg
+seamless-book-cover-textures-5.jpg -> book_cover3.jpg
+seamless-book-cover-textures-6.jpg -> book_cover4.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_112.jpg -> book_cover5.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_36.jpg -> book_cover6.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_57.jpg -> book_cover7.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_85.png -> book_cover8.png
+2999743831_0aeef6c2d3_b.jpg -> book_pages.jpg
+seamless-book-cover-textures-5_NRM.jpg -> book_cover3_NRM.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_112_NRM.jpg -> book_cover5_NRM.jpg
+«í½«ª¬¿-ßΓáαδσ-¬¡¿ú_85_NRM.jpg -> book_cover8_NRM.jpg
+2999743831_0aeef6c2d3_b_NRM.jpg -> book_pages_NRM.jpg
