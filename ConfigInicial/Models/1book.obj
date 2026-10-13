@@ -1,6 +1,6 @@
 # Blender v2.79 (sub 6) OBJ File: '1book.blend'
 # www.blender.org
-mtllib 1book.mtl.mtl
+mtllib book.mtl
 o Cube.006_Cube.008
 v 0.248478 0.356580 0.701800
 v -0.030628 0.356580 0.701800

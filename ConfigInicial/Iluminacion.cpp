@@ -62,6 +62,11 @@ void KeyCallback(
 
 void DoMovement();
 
+// Carga las 6 caras del cubemap del skybox.
+GLuint LoadCubemap(
+    const std::vector<std::string>& faces
+);
+
 
 // ============================================================
 // CAMARA
@@ -344,6 +349,12 @@ int main()
     Shader moonShader(
         "Shader/moon.vs",
         "Shader/moon.frag"
+    );
+
+    // Shader exclusivo para el skybox.
+    Shader skyboxShader(
+        "Shader/skybox.vs",
+        "Shader/skybox.frag"
     );
 
 
@@ -863,6 +874,124 @@ int main()
         GL_TEXTURE_2D,
         0
     );
+
+
+    // ========================================================
+    // SKYBOX: CUBO Y CUBEMAP
+    // ========================================================
+
+    GLfloat skyboxVertices[] =
+    {
+        -1.0f,  1.0f, -1.0f,
+        -1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+
+        -1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+
+        -1.0f, -1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+        -1.0f,  1.0f, -1.0f,
+         1.0f,  1.0f, -1.0f,
+         1.0f,  1.0f,  1.0f,
+         1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f, -1.0f,
+
+        -1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f, -1.0f,
+         1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+         1.0f, -1.0f,  1.0f
+    };
+
+    GLuint skyboxVAO;
+    GLuint skyboxVBO;
+
+    glGenVertexArrays(
+        1,
+        &skyboxVAO
+    );
+
+    glGenBuffers(
+        1,
+        &skyboxVBO
+    );
+
+    glBindVertexArray(
+        skyboxVAO
+    );
+
+    glBindBuffer(
+        GL_ARRAY_BUFFER,
+        skyboxVBO
+    );
+
+    glBufferData(
+        GL_ARRAY_BUFFER,
+        sizeof(skyboxVertices),
+        skyboxVertices,
+        GL_STATIC_DRAW
+    );
+
+    glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(
+        0,
+        3,
+        GL_FLOAT,
+        GL_FALSE,
+        3 * sizeof(GLfloat),
+        (GLvoid*)0
+    );
+
+    glBindVertexArray(0);
+
+    std::vector<std::string> skyboxFaces =
+    {
+        "images/skybox/right.jpg",
+        "images/skybox/left.jpg",
+        "images/skybox/top.jpg",
+        "images/skybox/bottom.jpg",
+        "images/skybox/front.jpg",
+        "images/skybox/back.jpg"
+    };
+
+    GLuint skyboxTexture =
+        LoadCubemap(
+            skyboxFaces
+        );
+
+    skyboxShader.Use();
+
+    glUniform1i(
+        glGetUniformLocation(
+            skyboxShader.Program,
+            "skybox"
+        ),
+        0
+    );
+
 
 
     // ========================================================
@@ -1497,7 +1626,7 @@ int main()
                 (i * BOOKCASE_DISTANCE);
 
 
-            // ------------------------------------------------
+            // ------------------------------------------------ skyboxView 
             // LIBRERO
             // ------------------------------------------------
 
@@ -2111,6 +2240,77 @@ int main()
 
 
         // ====================================================
+        // DIBUJAR SKYBOX AL FINAL DEL FRAME
+        // ====================================================
+
+        // El skybox se dibuja sin escribir profundidad para no
+        // tapar los modelos de la escena.
+        glDepthMask(GL_FALSE);
+        glDepthFunc(GL_LEQUAL);
+
+        skyboxShader.Use();
+
+        // Quitamos la traslacion de la camara para que el cielo
+        // se perciba infinitamente lejos.
+        glm::mat4 skyboxView =
+            glm::mat4(
+                glm::mat3(view)
+            );
+
+        // Subir todo el skybox
+        skyboxView = glm::translate(
+            skyboxView,
+            glm::vec3(
+                0.0f,
+                0.30f,
+                0.0f
+            )
+        );
+
+        glUniformMatrix4fv(
+            glGetUniformLocation(
+                skyboxShader.Program,
+                "view"
+            ),
+            1,
+            GL_FALSE,
+            glm::value_ptr(skyboxView)
+        );
+
+        glUniformMatrix4fv(
+            glGetUniformLocation(
+                skyboxShader.Program,
+                "projection"
+            ),
+            1,
+            GL_FALSE,
+            glm::value_ptr(projection)
+        );
+
+        glBindVertexArray(
+            skyboxVAO
+        );
+
+        glActiveTexture(GL_TEXTURE0);
+
+        glBindTexture(
+            GL_TEXTURE_CUBE_MAP,
+            skyboxTexture
+        );
+
+        glDrawArrays(
+            GL_TRIANGLES,
+            0,
+            36
+        );
+
+        glBindVertexArray(0);
+
+        glDepthFunc(GL_LESS);
+        glDepthMask(GL_TRUE);
+
+
+        // ====================================================
         // MOSTRAR FRAME
         // ====================================================
 
@@ -2172,6 +2372,22 @@ int main()
     glDeleteBuffers(
         1,
         &gridVBO
+    );
+
+
+    glDeleteTextures(
+        1,
+        &skyboxTexture
+    );
+
+    glDeleteVertexArrays(
+        1,
+        &skyboxVAO
+    );
+
+    glDeleteBuffers(
+        1,
+        &skyboxVBO
     );
 
 
@@ -2497,5 +2713,105 @@ void BuildSphere(
             }
         }
     }
+}
+
+// ============================================================
+// CARGAR CUBEMAP DEL SKYBOX
+// ============================================================
+
+GLuint LoadCubemap(
+    const std::vector<std::string>& faces
+)
+{
+    GLuint textureID;
+
+    glGenTextures(
+        1,
+        &textureID
+    );
+
+    glBindTexture(
+        GL_TEXTURE_CUBE_MAP,
+        textureID
+    );
+
+    for (GLuint i = 0; i < faces.size(); i++)
+    {
+        int width;
+        int height;
+        int channels;
+
+        unsigned char* image =
+            SOIL_load_image(
+                faces[i].c_str(),
+                &width,
+                &height,
+                &channels,
+                SOIL_LOAD_RGB
+            );
+
+        if (image)
+        {
+            glTexImage2D(
+                GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
+                0,
+                GL_RGB,
+                width,
+                height,
+                0,
+                GL_RGB,
+                GL_UNSIGNED_BYTE,
+                image
+            );
+
+            SOIL_free_image_data(image);
+        }
+        else
+        {
+            std::cout
+                << "ERROR SKYBOX: "
+                << faces[i]
+                << " -> "
+                << SOIL_last_result()
+                << std::endl;
+        }
+    }
+
+    glTexParameteri(
+        GL_TEXTURE_CUBE_MAP,
+        GL_TEXTURE_MIN_FILTER,
+        GL_LINEAR
+    );
+
+    glTexParameteri(
+        GL_TEXTURE_CUBE_MAP,
+        GL_TEXTURE_MAG_FILTER,
+        GL_LINEAR
+    );
+
+    glTexParameteri(
+        GL_TEXTURE_CUBE_MAP,
+        GL_TEXTURE_WRAP_S,
+        GL_CLAMP_TO_EDGE
+    );
+
+    glTexParameteri(
+        GL_TEXTURE_CUBE_MAP,
+        GL_TEXTURE_WRAP_T,
+        GL_CLAMP_TO_EDGE
+    );
+
+    glTexParameteri(
+        GL_TEXTURE_CUBE_MAP,
+        GL_TEXTURE_WRAP_R,
+        GL_CLAMP_TO_EDGE
+    );
+
+    glBindTexture(
+        GL_TEXTURE_CUBE_MAP,
+        0
+    );
+
+    return textureID;
 }
 
