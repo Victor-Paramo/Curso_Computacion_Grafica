@@ -25,6 +25,8 @@
   <ItemGroup>
     <None Include="..\..\..\Documents\shaders\sphere.frag" />
     <None Include="..\..\..\Documents\shaders\sphere.vs" />
+    <None Include="Shader\godrays.frag" />
+    <None Include="Shader\godrays.vs" />
     <None Include="Shader\lamp.frag" />
     <None Include="Shader\lamp.vs" />
     <None Include="Shader\lighting.frag" />
