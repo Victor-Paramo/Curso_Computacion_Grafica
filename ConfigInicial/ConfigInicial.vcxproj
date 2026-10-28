@@ -25,6 +25,8 @@
   <ItemGroup>
     <None Include="..\..\..\Documents\shaders\sphere.frag" />
     <None Include="..\..\..\Documents\shaders\sphere.vs" />
+    <None Include="Shader\core.frag" />
+    <None Include="Shader\core.vs" />
     <None Include="Shader\godrays.frag" />
     <None Include="Shader\godrays.vs" />
     <None Include="Shader\lamp.frag" />
@@ -33,11 +35,15 @@
     <None Include="Shader\lighting.vs" />
     <None Include="Shader\modelLoading.frag" />
     <None Include="Shader\modelLoading.vs" />
+    <None Include="Shader\moon.frag" />
+    <None Include="Shader\moon.vs" />
+    <None Include="Shader\skybox.frag" />
+    <None Include="Shader\skybox.vs" />
     <None Include="Shader\sun.frag" />
     <None Include="Shader\sun.vs" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fuentesDeLuz.cpp" />
+    <ClCompile Include="Maquina de estados.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
