@@ -45,7 +45,7 @@ bool keys[1024];
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 bool active;
 
-// Positions of the point lights void Animation() {
+// Positions of the point lights void Animation() { num
 glm::vec3 pointLightPositions[] = {
 	glm::vec3(0.0f,2.0f, 0.0f),
 	glm::vec3(0.0f,0.0f, 0.0f),
@@ -109,11 +109,31 @@ int dogAnim = 0;
 float FLegs = 0.0f;
 float RLegs = 0.0f;
 float head = 0.0f;
+float giroCabeza = 0.0f;
 float tail = 0.0f;
 glm::vec3 dogPos(0.0f, 0.0f, 0.0f);
 float dogRot = 0.0f;
 bool step = false;
 
+
+const glm::vec3 puntoA(0.0f, 0.0f, 1.4f);
+const glm::vec3 puntoB(1.4f, 0.0f, 1.4f);
+const glm::vec3 puntoE(0.0f, 0.0f, 0.0f);
+const glm::vec3 puntoC(-1.4f, 0.0f, -1.4f);
+const glm::vec3 puntoD(1.4f, 0.0f, -1.4f);
+const glm::vec3 rutaPerro[] = { puntoA, puntoB, puntoE, puntoC, puntoD, puntoE };
+int siguientePunto = 0;
+const float velocidadPerro = 0.5f;
+float fasePaso = 0.0f;
+
+enum EstadoPerro { AVANZAR, PREPARAR_GIRO, GIRAR_IZQUIERDA, GIRAR_DERECHA, PREPARAR_GIRO_FINAL, GIRAR_FINAL_E, DETENIDO };
+EstadoPerro estadoPerro = AVANZAR;
+const float velocidadGiro = 90.0f; // Grados por segundo
+float rumboFinalE = 0.0f;
+enum EstadoCabeza { CABEZA_IZQUIERDA, CABEZA_DERECHA };
+EstadoCabeza estadoCabeza = CABEZA_DERECHA;
+const float anguloCabeza = 28.0f;
+const float velocidadCabeza = 45.0f;
 
 
 // Deltatime
@@ -124,12 +144,7 @@ int main()
 {
 	// Init GLFW
 	glfwInit();
-	// Set all the required options for GLFW
-	/*glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);*/
+
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Victor Yotecatl", nullptr, nullptr);
@@ -313,6 +328,7 @@ int main()
 		//Head
 		model = modelTemp;
 		model = glm::translate(model, glm::vec3(0.0f, 0.093f, 0.208f));
+		model = glm::rotate(model, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(head), glm::vec3(0.0f, 0.0f, 1.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		HeadDog.Draw(lightingShader);
@@ -517,36 +533,122 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 }
 void Animation() {
 	if (AnimBall)
-	{
 		rotBall += 0.4f;
-		//printf("%f", rotBall);
-	}
-
 	if (AnimDog)
-	{
 		rotDog -= 0.6f;
-		//printf("%f", rotBall);
-	}
-	if (dogAnim == 1) { //Walk Animation
-		if (!step) {	//State 1
-			RLegs += 0.03f;
-			FLegs += 0.03f;
-			head += 0.03f;
-			tail += 0.03f;
-			if (RLegs > 15.0f) // Condition
-				step = true;
-		}
-		else {
-			RLegs -= 0.03f;
-			FLegs -= 0.03f;
-			head -= 0.03f;
-			tail -= 0.03f;
-			if (RLegs < -15.0f) // Condition
-				step = false;
-		}
 
-		dogPos.z += 0.0002;
-		printf("%f", RLegs);
+	if (dogAnim != 1) return;
+
+	float objetivoCabeza = 0.0f;
+	const int totalPuntos = sizeof(rutaPerro) / sizeof(rutaPerro[0]);
+
+	if (estadoPerro == AVANZAR)
+	{
+		glm::vec3 diferencia = rutaPerro[siguientePunto] - dogPos;
+		diferencia.y = 0.0f;
+		float distancia = glm::length(diferencia);
+		float avance = velocidadPerro * deltaTime;
+
+		if (distancia <= avance || distancia < 0.001f)
+		{
+			dogPos = rutaPerro[siguientePunto];
+			++siguientePunto;
+			if (siguientePunto == totalPuntos)
+			{
+				rumboFinalE = dogRot + 45.0f;
+				estadoPerro = PREPARAR_GIRO_FINAL;
+			}
+			else
+				estadoPerro = PREPARAR_GIRO;
+		}
+		else
+		{
+			dogPos += (diferencia / distancia) * avance;
+		}
+	}
+	else if (estadoPerro == PREPARAR_GIRO ||
+		estadoPerro == GIRAR_IZQUIERDA || estadoPerro == GIRAR_DERECHA)
+	{
+		glm::vec3 direccion = rutaPerro[siguientePunto] - dogPos;
+		float rumbo = glm::degrees(atan2(direccion.x, direccion.z));
+		float error = fmod(rumbo - dogRot + 540.0f, 360.0f) - 180.0f;
+		float pasoGiro = velocidadGiro * deltaTime;
+
+		if (fabs(error) <= 0.001f)
+		{
+			dogRot = rumbo;
+			estadoPerro = AVANZAR;
+		}
+		else
+		{
+			estadoCabeza = (error > 0.0f ? CABEZA_DERECHA : CABEZA_IZQUIERDA);
+			objetivoCabeza = (estadoCabeza == CABEZA_DERECHA ? anguloCabeza : -anguloCabeza);
+
+			if (estadoPerro == PREPARAR_GIRO)
+			{
+				// La cabeza alcanza primero su angulo; el cuerpo permanece quieto.
+				if (fabs(giroCabeza - objetivoCabeza) < 0.01f)
+					estadoPerro = (error > 0.0f ? GIRAR_DERECHA : GIRAR_IZQUIERDA);
+			}
+			else if (fabs(error) <= pasoGiro)
+			{
+				dogRot = rumbo;
+				estadoPerro = AVANZAR;
+				objetivoCabeza = 0.0f;
+			}
+			else
+			{
+				dogRot += (error > 0.0f ? pasoGiro : -pasoGiro);
+			}
+		}
 	}
 
+
+	else if (estadoPerro == PREPARAR_GIRO_FINAL || estadoPerro == GIRAR_FINAL_E)
+	{
+		objetivoCabeza = anguloCabeza;
+		if (estadoPerro == PREPARAR_GIRO_FINAL)
+		{
+			if (fabs(giroCabeza - objetivoCabeza) < 0.01f)
+				estadoPerro = GIRAR_FINAL_E;
+		}
+		else
+		{
+			float error = rumboFinalE - dogRot;
+			float pasoGiro = velocidadGiro * deltaTime;
+			if (fabs(error) <= pasoGiro)
+			{
+				dogRot = rumboFinalE;
+				estadoPerro = DETENIDO;
+				objetivoCabeza = 0.0f;
+			}
+			else
+			{
+				dogRot += pasoGiro;
+			}
+		}
+	}
+
+	float cambioCabeza = velocidadCabeza * deltaTime;
+	if (giroCabeza < objetivoCabeza)
+		giroCabeza = fmin(giroCabeza + cambioCabeza, objetivoCabeza);
+	else if (giroCabeza > objetivoCabeza)
+		giroCabeza = fmax(giroCabeza - cambioCabeza, objetivoCabeza);
+
+	if (estadoPerro != DETENIDO)
+	{
+		fasePaso += 4.0f * deltaTime;
+		const float oscilacion = 15.0f * sin(fasePaso);
+		RLegs = oscilacion;
+		FLegs = oscilacion;
+		head = 4.0f * sin(fasePaso);
+		tail = 9.0f * sin(fasePaso);
+	}
+	else
+	{
+		RLegs = 0.0f;
+		FLegs = 0.0f;
+		head = 0.0f;
+		tail = 0.0f;
+	}
 }
